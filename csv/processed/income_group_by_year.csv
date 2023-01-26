@@ -1,0 +1,61 @@
+year,incomegroup,Number of Student
+1950-01-01,High income,3865348
+1950-01-01,Low income,9749
+1950-01-01,Lower middle income,675920
+1950-01-01,Upper middle income,830549
+1955-01-01,High income,4521373
+1955-01-01,Low income,19926
+1955-01-01,Lower middle income,908247
+1955-01-01,Upper middle income,1168170
+1960-01-01,High income,5379428
+1960-01-01,Low income,82146
+1960-01-01,Lower middle income,1659381
+1960-01-01,Upper middle income,2244256
+1965-01-01,High income,6686537
+1965-01-01,Low income,147164
+1965-01-01,Lower middle income,2671820
+1965-01-01,Upper middle income,3220454
+1970-01-01,High income,8705792
+1970-01-01,Low income,258139
+1970-01-01,Lower middle income,4152659
+1970-01-01,Upper middle income,4657680
+1975-01-01,High income,11160007
+1975-01-01,Low income,397690
+1975-01-01,Lower middle income,6564630
+1975-01-01,Upper middle income,7044174
+1980-01-01,High income,13402261
+1980-01-01,Low income,576380
+1980-01-01,Lower middle income,8141100
+1980-01-01,Upper middle income,9598727
+1985-01-01,High income,15463393
+1985-01-01,Low income,697138
+1985-01-01,Lower middle income,10326365
+1985-01-01,Upper middle income,12564164
+1990-01-01,High income,18557702
+1990-01-01,Low income,877582
+1990-01-01,Lower middle income,12724344
+1990-01-01,Upper middle income,15410818
+1995-01-01,High income,22126059
+1995-01-01,Low income,1136080
+1995-01-01,Lower middle income,15941731
+1995-01-01,Upper middle income,19474968
+2000-01-01,High income,25817275
+2000-01-01,Low income,1635911
+2000-01-01,Lower middle income,20538558
+2000-01-01,Upper middle income,26279236
+2005-01-01,High income,29765366
+2005-01-01,Low income,2307850
+2005-01-01,Lower middle income,25720465
+2005-01-01,Upper middle income,35927119
+2010-01-01,High income,33710848
+2010-01-01,Low income,3235062
+2010-01-01,Lower middle income,32379365
+2010-01-01,Upper middle income,48428587
+2015-01-01,High income,37555867
+2015-01-01,Low income,4347416
+2015-01-01,Lower middle income,38780900
+2015-01-01,Upper middle income,59363750
+2020-01-01,High income,42383528
+2020-01-01,Low income,5275748
+2020-01-01,Lower middle income,47813724
+2020-01-01,Upper middle income,67584571

@@ -1,61 +1,31 @@
-year,incomegroup,0
-1950.0,High income,2707
-1950.0,Low income,51
-1950.0,Lower middle income,658
-1950.0,Upper middle income,1180
-1955.0,High income,2843
-1955.0,Low income,67
-1955.0,Lower middle income,739
-1955.0,Upper middle income,1454
-1960.0,High income,2994
-1960.0,Low income,94
-1960.0,Lower middle income,882
-1960.0,Upper middle income,1809
-1965.0,High income,3282
-1965.0,Low income,135
-1965.0,Lower middle income,1068
-1965.0,Upper middle income,2074
-1970.0,High income,3635
-1970.0,Low income,160
-1970.0,Lower middle income,1201
-1970.0,Upper middle income,2351
-1975.0,High income,3924
-1975.0,Low income,183
-1975.0,Lower middle income,1332
-1975.0,Upper middle income,2724
-1980.0,High income,4101
-1980.0,Low income,207
-1980.0,Lower middle income,1476
-1980.0,Upper middle income,3045
-1985.0,High income,4238
-1985.0,Low income,223
-1985.0,Lower middle income,1669
-1985.0,Upper middle income,3418
-1990.0,High income,4491
-1990.0,Low income,273
-1990.0,Lower middle income,1863
-1990.0,Upper middle income,3816
-1995.0,High income,4894
-1995.0,Low income,342
-1995.0,Lower middle income,2276
-1995.0,Upper middle income,4508
-2000.0,High income,5295
-2000.0,Low income,430
-2000.0,Lower middle income,2678
-2000.0,Upper middle income,5320
-2005.0,High income,5670
-2005.0,Low income,551
-2005.0,Lower middle income,3177
-2005.0,Upper middle income,6057
-2010.0,High income,5924
-2010.0,Low income,700
-2010.0,Lower middle income,3720
-2010.0,Upper middle income,6581
-2015.0,High income,6016
-2015.0,Low income,761
-2015.0,Lower middle income,4003
-2015.0,Upper middle income,6817
-2020.0,High income,6012
-2020.0,Low income,761
-2020.0,Lower middle income,4002
-2020.0,Upper middle income,6829
+year,private01,0
+1950.0,0.0,3148
+1950.0,1.0,1492
+1955.0,0.0,3515
+1955.0,1.0,1640
+1960.0,0.0,4025
+1960.0,1.0,1818
+1965.0,0.0,4499
+1965.0,1.0,2145
+1970.0,0.0,4982
+1970.0,1.0,2475
+1975.0,0.0,5482
+1975.0,1.0,2799
+1980.0,0.0,5853
+1980.0,1.0,3098
+1985.0,0.0,6137
+1985.0,1.0,3536
+1990.0,0.0,6440
+1990.0,1.0,4144
+1995.0,0.0,6966
+1995.0,1.0,5208
+2000.0,0.0,7425
+2000.0,1.0,6465
+2005.0,0.0,7840
+2005.0,1.0,7783
+2010.0,0.0,8366
+2010.0,1.0,8729
+2015.0,0.0,8581
+2015.0,1.0,9187
+2020.0,0.0,8587
+2020.0,1.0,9188
