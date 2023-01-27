@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-waffle@0.4.0/dist/d3-waffle.min.js"></script>
+    <style>
+        .waffle {
+            font-size: 10px;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chart"></div>
+    <script>
+        var data = {
+            values: [10, 20, 30],
+            labels: ["Option 1", "Option 2", "Option 3"]
+        };
+
+        var waffle = d3.waffle()
+            .size([300, 300])
+            .rows(5)
+            .columns(10)
+            .data(data.values)
+            .labels(data.labels)
+            .emptyColor("#ddd")
+            .color("#4caf50");
+
+        var chart = d3.select("#chart")
+            .append("svg")
+            .attr("width", waffle.size()[0])
+            .attr("height", waffle.size()[1])
+            .append("g")
+            .attr("class", "waffle")
+            .datum(data.values)
+            .call(waffle);
+    </script>
+</body>
+
+</html>
