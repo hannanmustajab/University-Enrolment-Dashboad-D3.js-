@@ -1,5 +1,5 @@
 // set the dimensions and margins of the graph
-var margin = { top: 10, right: 30, bottom: 20, left: 50 },
+var margin = { top: 10, right: 500, bottom: 90, left: 70 },
     width = 1100 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
@@ -35,10 +35,10 @@ d3.csv("../csv/processed/private_public_by_year_processed.csv", function (data) 
 
     // Add Y axis
     var y = d3.scaleLinear()
-        .domain([0, 300000000])
+        .domain([0, 200000000])
         .range([d3.format(".2s")(height), 0]);
     svg.append("g")
-        .call(d3.axisRight(y));
+        .call(d3.axisLeft(y));
 
     // color palette = one color per subgroup
     var color = d3.scaleOrdinal()
