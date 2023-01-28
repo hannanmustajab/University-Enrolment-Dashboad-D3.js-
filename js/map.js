@@ -1,4 +1,4 @@
-var width = 1200,
+var width = 900,
     height = 500;
 
 var svg = d3.select("#map")
@@ -54,7 +54,9 @@ function drawMap(world, data) {
             university: d.University,
             private: +d.Private,
             public: +d.Public,
-            count: +d.total_students
+            count: +d.total_students,
+            year: d.founded_in
+
         }
     });
 
@@ -96,6 +98,12 @@ console.log(populationById);
 
             d3.select(".public")
                 .text(d.details.public);
+            
+            d3.select(".count")
+                .text(d3.format(".2s") (d.details.count));
+
+                d3.select(".year")
+                .text(d.details.year);
 
             d3.select('.details')
                 .style('visibility', "visible")
