@@ -35,6 +35,7 @@ function drawMap(world, data) {
     // geoMercator projection
     var projection = d3.geoMercator() //d3.geoOrthographic()
         .scale(100)
+        .scale(100)
         .translate([width / 2, height / 1.5]);
 
     // geoPath projection
@@ -49,6 +50,7 @@ function drawMap(world, data) {
 
 
     data.forEach(function (d) {
+
         // Calculate % of public universities.
         const public_percentage = ((+d.Public) / (+d.Private + +d.Public)) * 100;
         // Calculate % of private universities.
@@ -61,6 +63,7 @@ function drawMap(world, data) {
             year: d.founded_in,
             private_p: private_percentage,
             public_p: public_percentage
+
         }
     });
 
@@ -116,6 +119,8 @@ function drawMap(world, data) {
 
             d3.select('.details')
                 .style('visibility', "visible")
+
+            console.log(d);
 
 
         })
