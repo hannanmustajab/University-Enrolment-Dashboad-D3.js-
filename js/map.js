@@ -112,14 +112,13 @@ function drawMap(world, data) {
             d3.select("#private_uni_progressbar")
             .style("width",d3.format(".2s")(d.details.private_p)+'%');
 
-                
-                
-
             d3.select(".year")
                 .text(d.details.year);
 
             d3.select('.details')
                 .style('visibility', "visible")
+            
+            
         })
         .on('mouseout', function (d) {
             d3.select(this)
