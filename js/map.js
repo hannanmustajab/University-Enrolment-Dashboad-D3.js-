@@ -1,5 +1,5 @@
-var width = 900,
-    height = 500;
+var width = 700,
+    height = 300;
 
 var svg = d3.select("#map")
     .append("svg")
@@ -34,34 +34,38 @@ d3.queue()
 function drawMap(world, data) {
     // geoMercator projection
     var projection = d3.geoMercator() //d3.geoOrthographic()
-        .scale(130)
+        .scale(100)
         .translate([width / 2, height / 1.5]);
 
     // geoPath projection
     var path = d3.geoPath().projection(projection);
 
     var color = d3.scaleThreshold()
-    .domain([10000,100000,500000,1000000,5000000,10000000,50000000,100000000,500000000,1500000000])
-    .range(["rgb(247,251,255)", "rgb(222,235,247)", "rgb(198,219,239)", "rgb(158,202,225)", "rgb(107,174,214)", "rgb(66,146,198)","rgb(33,113,181)","rgb(8,81,156)","rgb(8,48,107)","rgb(3,19,43)"]);
+        .domain([10000, 100000, 500000, 1000000, 5000000, 10000000, 50000000, 100000000, 500000000, 1500000000])
+        .range(["rgb(247,251,255)", "rgb(222,235,247)", "rgb(198,219,239)", "rgb(158,202,225)", "rgb(107,174,214)", "rgb(66,146,198)", "rgb(33,113,181)", "rgb(8,81,156)", "rgb(8,48,107)", "rgb(3,19,43)"]);
 
     var features = topojson.feature(world, world.objects.countries).features;
     var populationById = {};
 
 
     data.forEach(function (d) {
+        // Calculate % of public universities.
+        const public_percentage = ((+d.Public)/(+d.Private + +d.Public))*100;
+        // Calculate % of private universities.
+        const private_percentage = 100 - public_percentage;
         populationById[d.countrycode] = {
-            students: +d.Number_of_Student,
             university: d.University,
             private: +d.Private,
             public: +d.Public,
             count: +d.total_students,
-            year: d.founded_in
-
+            year: d.founded_in,
+            private_p: private_percentage,
+            public_p: public_percentage
         }
     });
 
-console.log(data);
-console.log(populationById);
+    console.log(data);
+    console.log(populationById);
 
     features.forEach(function (d) {
         d.details = populationById[d.id] ? populationById[d.id] : {};
@@ -98,11 +102,20 @@ console.log(populationById);
 
             d3.select(".public")
                 .text(d.details.public);
-            
-            d3.select(".count")
-                .text(d3.format(".2s") (d.details.count));
 
-                d3.select(".year")
+            d3.select(".count")
+                .text(d3.format(".2s")(d.details.count));
+            
+            d3.select("#private_uni")
+                .text(d3.format(".2s")(d.details.private_p)+'%');
+            
+            d3.select("#private_uni_progressbar")
+            .style("width",d3.format(".2s")(d.details.private_p)+'%');
+
+                
+                
+
+            d3.select(".year")
                 .text(d.details.year);
 
             d3.select('.details')
