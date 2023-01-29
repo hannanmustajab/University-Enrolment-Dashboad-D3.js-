@@ -74,10 +74,17 @@ var svg = d3.select("#my_dataviz")
 //d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_connectedscatter.csv", function (data) {
 d3.csv("csv/processed/students_by_country_year.csv", function (data) {
 
-  console.log(data);
+  var parsetime = d3.timeParse("%Y");
+  data.forEach(function (d) {
+    d.time = parsetime(d.time);
+  });
+
+  console.log(data)
   // List of groups (here I have one group per column)
   // var allGroup = ["valueA", "valueB", "valueC"]
-  var allGroup = ["India", "Pakistan", "Itay"]
+  // var allGroup = ["India", "Pakistan", "Italy"]
+  var allGroup = Object.keys(data[0]);
+  allGroup.shift();
 
   // add the options to the button
   d3.select("#selectButton")
@@ -94,8 +101,8 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
     .range(d3.schemeSet2);
 
   // Add X axis --> it is a date format
-  var x = d3.scaleLinear()
-    .domain(d3.extent(data, function (d) { return d.time; }))
+  var x = d3.scaleTime()
+    .domain(d3.extent(data, function (d) { return (d.time); }))
     .range([0, width]);
   svg.append("g")
     .attr("transform", "translate(0," + height + ")")
@@ -103,10 +110,11 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
 
   // Add Y axis
   var y = d3.scaleLinear()
-    .domain([0, 1700000])
+    .domain([0, 1800000])
     .range([height, 0]);
   svg.append("g")
-    .call(d3.axisLeft(y));
+    .attr("class", "yaxis")
+    .call(d3.axisRight(y));
 
   // Initialize line with group a
   var line = svg
@@ -114,7 +122,7 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
     .append("path")
     .datum(data)
     .attr("d", d3.line()
-      .x(function (d) { return x(+d.time) })
+      .x(function (d) { return x(d.time) })
       .y(function (d) { return y(+d.Pakistan) })
     )
 
@@ -129,17 +137,25 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
     console.log(selectedGroup);
     // Create new data with the selection?
     var dataFilter = data.map(function (d) { return { time: d.time, value: d[selectedGroup] } })
-    console.log(dataFilter);
+    var max = d3.max(data, function (d) { return +d[selectedGroup] })
+
+    y.domain([0, max]);
+
     // Give these new data to update line
     line
       .datum(dataFilter)
       .transition()
       .duration(1000)
       .attr("d", d3.line()
-        .x(function (d) { return x(+d.time) })
+        .x(function (d) { return x(d.time) })
         .y(function (d) { return y(+d.value) })
       )
       .attr("stroke", function (d) { return myColor(selectedGroup) })
+
+    svg.select('.yaxis')
+      .transition()
+      .duration(1000)
+      .call(d3.axisRight(y));
   }
 
   // When the button is changed, run the updateChart function
