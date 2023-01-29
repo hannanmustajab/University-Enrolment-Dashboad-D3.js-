@@ -1,6 +1,6 @@
 // set the dimensions and margins of the graph
 var margin = { top: 10, right: 500, bottom: 90, left: 70 },
-    width = 1100 - margin.left - margin.right,
+    width = 1150 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -36,7 +36,7 @@ d3.csv("../csv/processed/private_public_by_year_processed.csv", function (data) 
     // Add Y axis
     var y = d3.scaleLinear()
         .domain([0, 200000000])
-        .range([d3.format(".2s")(height), 0]);
+        .range([height, 0]);
     svg.append("g")
         .call(d3.axisLeft(y));
 

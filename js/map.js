@@ -1,3 +1,13 @@
+// Function to compute the product of p1 and p2
+function myFunction(data) {
+    console.log(data);
+    const private_uni = {name:'private',count:data.details.private_p};
+    const public_uni = {name:'public',count:data.details.public_p};
+    // d3.select('#waffle_country')
+    
+    
+  }
+
 var width = 700,
     height = 300;
 
@@ -50,9 +60,9 @@ function drawMap(world, data) {
 
 
     data.forEach(function (d) {
-    
+
         // Calculate % of public universities.
-        const public_percentage = ((+d.Public)/(+d.Private + +d.Public))*100;
+        const public_percentage = ((+d.Public) / (+d.Private + +d.Public)) * 100;
         // Calculate % of private universities.
         const private_percentage = 100 - public_percentage;
         populationById[d.countrycode] = {
@@ -63,7 +73,7 @@ function drawMap(world, data) {
             year: d.founded_in,
             private_p: private_percentage,
             public_p: public_percentage
-            
+
         }
     });
 
@@ -108,22 +118,23 @@ function drawMap(world, data) {
 
             d3.select(".count")
                 .text(d3.format(".2s")(d.details.count));
-            
+
             d3.select("#private_uni")
-                .text(d3.format(".2s")(d.details.private_p)+'%');
-            
+                .text(d3.format(".2s")(d.details.private_p) + '%');
+
             d3.select("#private_uni_progressbar")
-            .style("width",d3.format(".2s")(d.details.private_p)+'%');
+                .style("width", d3.format(".2s")(d.details.private_p) + '%');
 
             d3.select(".year")
                 .text(d.details.year);
 
             d3.select('.details')
                 .style('visibility', "visible")
-                        
-            console.log(d);
-            
-            
+
+            myFunction(d);
+
+        
+
         })
         .on('mouseout', function (d) {
             d3.select(this)
