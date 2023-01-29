@@ -1,12 +1,12 @@
 // Function to compute the product of p1 and p2
 function myFunction(data) {
     console.log(data);
-    const private_uni = {name:'private',count:data.details.private_p};
-    const public_uni = {name:'public',count:data.details.public_p};
+    const private_uni = { name: 'private', count: data.details.private_p };
+    const public_uni = { name: 'public', count: data.details.public_p };
     // d3.select('#waffle_country')
-    
-    
-  }
+
+
+}
 
 var width = 700,
     height = 300;
@@ -104,11 +104,16 @@ function drawMap(world, data) {
                 .style("stroke-width", 1)
                 .style("cursor", "pointer");
 
+            var CountryCard = d.properties.name;
+
+            d3.select(".CountryCard")
+                .text(CountryCard);
+
             d3.select(".name_country")
-                .text(d.properties.name);
+                .text("Name: " + d.properties.name);
 
             d3.select(".oldest_university")
-                .text(d.details.university);
+                .text("Oldest University: " + d.details.university);
 
             d3.select(".private")
                 .text(d.details.private);
@@ -116,8 +121,11 @@ function drawMap(world, data) {
             d3.select(".public")
                 .text(d.details.public);
 
-            d3.select(".count")
+            d3.select(".countOfStudents")
                 .text(d3.format(".2s")(d.details.count));
+
+            d3.select(".countStudent")
+                .text("Students enrolled: " + d3.format(".2s")(d.details.count));
 
             d3.select("#private_uni")
                 .text(d3.format(".2s")(d.details.private_p) + '%');
@@ -126,14 +134,14 @@ function drawMap(world, data) {
                 .style("width", d3.format(".2s")(d.details.private_p) + '%');
 
             d3.select(".year")
-                .text(d.details.year);
+                .text("Founded Year: " + (d.details.year));
 
             d3.select('.details')
                 .style('visibility', "visible")
 
             myFunction(d);
 
-        
+
 
         })
         .on('mouseout', function (d) {
