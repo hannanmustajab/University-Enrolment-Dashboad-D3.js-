@@ -106,6 +106,16 @@ function drawMap(world, data) {
 
             var CountryCard = d.properties.name;
 
+            var DetailText = d.details.university + " is the oldest university in " + d.properties.name +
+                ". It was founded in " + d.details.year + " and has " + d3.format(".2s")(d.details.count)
+                + " students enrolled.";
+
+
+            d3.select(".details")
+                .text(DetailText)
+                .style("font-size", "20px")
+                .style("fill", "red");
+
             d3.select(".CountryCard")
                 .text(CountryCard);
 
