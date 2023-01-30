@@ -15,7 +15,7 @@ var svg_line = d3.select("#line-chart")
 
 //Read the data
 d3.csv("csv/processed/students_by_country_year.csv", function (data) {
-console.log(data);
+  console.log(data);
 
   var parsetime = d3.timeParse("%Y-%m-%d");
   data.forEach(function (d) {
@@ -90,14 +90,14 @@ console.log(data);
   // Three function that change the tooltip when user hover / move / leave a cell
   var mouseover = function (d) {
 
-    var subgroupName = +d.value;
+    var studentsEnrolled = +d.value;
     var subgroupYear = d.time.getFullYear();
     // var subgroupValue = d.data[subgroupName];
     // console.log(subgroupYear)
 
     // console.log(d);
     tooltip_
-      .html("students enrolled: " + subgroupName + "<br>" + " Year " + subgroupYear)
+      .html("students enrolled: " + d3.format(".2s")(studentsEnrolled) + "<br>" + " Year " + subgroupYear)
       .style("opacity", 1)
   }
   var mousemove = function (d) {
