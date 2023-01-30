@@ -54,7 +54,7 @@ function drawMap(world, data) {
     var color = d3.scaleThreshold()
         .domain([10000, 100000, 500000, 1000000, 5000000, 10000000, 50000000, 100000000, 500000000, 1500000000])
         .range(["rgb(247,251,255)", "rgb(222,235,247)", "rgb(198,219,239)", "rgb(158,202,225)", "rgb(107,174,214)", "rgb(66,146,198)", "rgb(33,113,181)", "rgb(8,81,156)", "rgb(8,48,107)", "rgb(3,19,43)"]);
-    
+
     var features = topojson.feature(world, world.objects.countries).features;
     var populationById = {};
 
@@ -118,11 +118,11 @@ function drawMap(world, data) {
                 .text(CountryCard);
 
             d3.select("#name_country")
-                .text( d.properties.name);
+                .text(d.properties.name);
 
             var oldUniNameHeading = "Oldest University : " + d.details.university;
             d3.select("#oldest_university")
-                .text( d.details.university);
+                .text(d.details.university);
 
             d3.select(".private")
                 .text(d.details.private);
@@ -140,17 +140,23 @@ function drawMap(world, data) {
                 .text(d3.format(".2s")(d.details.private_p) + '%');
 
             d3.select("#private_uni_progressbar")
-                .style("width", d3.format(".2s")(d.details.private_p) + '%');
+                .style("width", d3.format(".2s")(d.details.private_p) + '%')
+                .text('Private')
+
+
+            d3.select("#public_uni_progressbar")
+                .style("width", d3.format(".2s")(d.details.public_p) + '%')
+                .text('Public')
 
             d3.select(".year")
                 .text(d.details.year);
 
             d3.select('.details')
                 .style('visibility', "visible")
-                        
+
             console.log(d);
-            
-            
+
+
         })
         .on('mouseout', function (d) {
             d3.select(this)
