@@ -91,7 +91,9 @@
                                           <div class="progress-bar bg-info" role="progressbar"
                                              id="private_uni_progressbar" style="width: 0%" aria-valuenow="50"
                                              aria-valuemin="0" aria-valuemax="100"></div>
-                                             <div class="progress-bar Dark" role="progressbar" style="width: 0%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" id="public_uni_progressbar"></div>
+                                          <div class="progress-bar Dark" role="progressbar" style="width: 0%"
+                                             aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"
+                                             id="public_uni_progressbar"></div>
 
                                        </div>
                                     </div>
@@ -149,7 +151,7 @@
                         <div class="card-body">
                            <p class="details1"></p>
                            <p> <span id="oldest_university" style="font-size: large; font-weight: bolder;"></span>
-                           is the oldest universty</p>
+                              is the oldest universty</p>
                            <!-- <p class="name_country strong">Name: </p>
                            <p class="oldest_university">Oldest University: </p>
                            <p class="countStudent">Students enrolled: </p>
@@ -171,7 +173,11 @@
                            <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
                         </div>
                         <div class="card-body">
-                           <select id="selectButton"></select>
+                           <select id="selectButton">
+                              <option selected="selected" disabled=true>
+                                 Choose a Country
+                              </option>
+                           </select>
                            <div id="line-chart"></div>
                         </div>
                      </div>
@@ -197,7 +203,7 @@
                            <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
                         </div>
                         <div class="card-body">
-                           
+
                            <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce
                               CSS bloat and poor page performance. Custom CSS classes are used to create
                               custom components and custom utility classes.
@@ -217,20 +223,20 @@
                            <div id="stacked_bar2"></div>
                            <!-- <div id="line-chart"></div> -->
                         </div>
-                     </div>                        
+                     </div>
                   </div>
                </div>
             </div>
             <!-- /.container-fluid -->
          </div>
          <!-- End of Main Content -->
-  
+
       </div>
       <!-- End of Content Wrapper -->
    </div>
    <!-- End of Page Wrapper -->
    <!-- Scroll to Top Button-->
- 
+
 
    <!-- Load d3.js -->
 

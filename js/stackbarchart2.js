@@ -17,12 +17,11 @@ d3.csv("../csv/processed/private_public_by_year_processed.csv", function (data) 
 
     var parsetime = d3.timeParse("%Y-%m-%d");
     data.forEach(function (d) {
-      d.year = parsetime(d.year);
+        d.year = parsetime(d.year);
     });
-    console.log(data);
     data.forEach(function (d) {
         d.year = d.year.getFullYear();
-      });
+    });
 
     // List of subgroups = header of the csv files = soil condition here
     var subgroups = data.columns.slice(1)
@@ -30,7 +29,6 @@ d3.csv("../csv/processed/private_public_by_year_processed.csv", function (data) 
     // List of groups = species here = value of the first column called group -> I show them on the X axis
     var groups = d3.map(data, function (d) { return (d.year) }).keys()
 
-    console.log(groups);
 
     // Add X axis
     var x = d3.scaleBand()
@@ -77,7 +75,7 @@ d3.csv("../csv/processed/private_public_by_year_processed.csv", function (data) 
         var subgroupName = d3.select(this.parentNode).datum().key;
         var subgroupValue = d.data[subgroupName];
         tooltip
-            .html("University: " + subgroupName + "<br>" + "Number of Students: " + d3.format(".2s") (subgroupValue))
+            .html("University: " + subgroupName + "<br>" + "Number of Students: " + d3.format(".2s")(subgroupValue))
             .style("opacity", 1)
     }
     var mousemove = function (d) {
