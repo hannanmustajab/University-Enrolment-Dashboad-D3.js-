@@ -14,7 +14,6 @@ var svg_line = d3.select("#line-chart")
     "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
-//d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_connectedscatter.csv", function (data) {
 d3.csv("csv/processed/students_by_country_year.csv", function (data) {
 
 
@@ -54,7 +53,7 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
 
   // Add Y axis
   var y = d3.scaleLinear()
-    .domain([0, 1800000])
+    .domain([0, 200000])
     .range([height, 0]);
     svg_line.append("g")
     .attr("class", "yaxis")
@@ -67,10 +66,8 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
     .datum(data)
     .attr("d", d3.line()
       .x(function (d) { return x(d.time) })
-      .y(function (d) { return y(+d.Pakistan) })
+      .y(function (d) { return y(+d.Afghanistan) })
     )
-
-
     .attr("stroke", function (d) { return myColor("valueA") })
     .style("stroke-width", 4)
     .style("fill", "none")
@@ -82,8 +79,9 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
     // Create new data with the selection?
     var dataFilter = data.map(function (d) { return { time: d.time, value: d[selectedGroup] } })
     var max = d3.max(data, function (d) { return +d[selectedGroup] })
+    var min = d3.min(data, function (d) { return +d[selectedGroup] })
 
-    y.domain([0, max]);
+    y.domain([min, max]);
 
     // Give these new data to update line
     line
