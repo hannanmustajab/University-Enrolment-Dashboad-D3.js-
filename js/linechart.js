@@ -1,11 +1,11 @@
 
 // set the dimensions and margins of the graph
 var margin = { top: 10, right: 30, bottom: 30, left: 60 },
-    width = 460 - margin.left - margin.right,
+    width = 700 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-var svg = d3.select("#my_dataviz")
+var svg_linechart = d3.select("#linechart_worldwide")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -26,7 +26,7 @@ d3.csv("../csv/processed/yearwise_enrolment.csv",
         var x = d3.scaleTime()
             .domain(d3.extent(data, function (d) { return d.year; }))
             .range([0, width]);
-        svg.append("g")
+        svg_linechart.append("g")
             .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(x));
 
@@ -34,11 +34,11 @@ d3.csv("../csv/processed/yearwise_enrolment.csv",
         var y = d3.scaleLinear()
             .domain([0, d3.max(data, function (d) { return +d.count; })])
             .range([height, 0]);
-        svg.append("g")
+        svg_linechart.append("g")
             .call(d3.axisLeft(y));
 
         // Add the line
-        svg.append("path")
+        svg_linechart.append("path")
             .datum(data)
             .attr("fill", "none")
             .attr("stroke", "steelblue")
