@@ -72,6 +72,44 @@ console.log(data);
     .style("stroke-width", 4)
     .style("fill", "none")
 
+
+
+  // ----------------
+  // Create a tooltip
+  // ----------------
+  var tooltip_ = d3.select("#line-chart")
+    .append("div")
+    .style("opacity", 0)
+    .attr("class", "tooltip")
+    .style("background-color", "white")
+    .style("border", "solid")
+    .style("border-width", "1px")
+    .style("border-radius", "5px")
+    .style("padding", "10px")
+
+  // Three function that change the tooltip when user hover / move / leave a cell
+  var mouseover = function (d) {
+
+    var subgroupName = +d.value;
+    var subgroupYear = d.time.getFullYear();
+    // var subgroupValue = d.data[subgroupName];
+    // console.log(subgroupYear)
+
+    // console.log(d);
+    tooltip_
+      .html("students enrolled: " + subgroupName + " Year " + subgroupYear)
+      .style("opacity", 1)
+  }
+  var mousemove = function (d) {
+    tooltip_
+      .style("left", (d3.mouse(this)[0] + 90) + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
+      .style("top", (d3.mouse(this)[1]) + "px")
+  }
+  var mouseleave = function (d) {
+    tooltip_
+      .style("opacity", 0)
+  }
+
   // Initialize dots with group a
   var dot = svg_line
     .selectAll('circle')
@@ -82,10 +120,17 @@ console.log(data);
     .attr("cy", function (d) { return y(+d.Afghanistan) })
     .attr("r", 5)
     .style("fill", "#69b3a2")
+    .on("mouseover", mouseover)
+    .on("mousemove", mousemove)
+    .on("mouseleave", mouseleave)
+
+
+
+
+
   // A function that update the chart
   function update(selectedGroup) {
 
-    console.log(selectedGroup);
     // Create new data with the selection?
     var dataFilter = data.map(function (d) { return { time: d.time, value: d[selectedGroup] } })
     var max = d3.max(data, function (d) { return +d[selectedGroup] })
@@ -109,12 +154,15 @@ console.log(data);
       .duration(1000)
       .call(d3.axisRight(y));
 
+
+
     dot
       .data(dataFilter)
       .transition()
       .duration(1000)
       .attr("cx", function (d) { return x(+d.time) })
       .attr("cy", function (d) { return y(+d.value) })
+
   }
 
   // When the button is changed, run the updateChart function
