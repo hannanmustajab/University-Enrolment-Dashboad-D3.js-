@@ -13,12 +13,12 @@ var chart3 = d3waffle()
 
   
 d3.csv("../csv/processed/income_group_count.csv", function (d) {
+  console.log(d);
   return {
     name: d.incomegroup,
     value: Math.round( +d.count_percentage ),
   };
 }, function (error, rows) {
-  
   d3.select("#waffle-chart")
     .datum(rows)
     .call(chart3);
