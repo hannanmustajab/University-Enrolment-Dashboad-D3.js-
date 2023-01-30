@@ -97,7 +97,7 @@ console.log(data);
 
     // console.log(d);
     tooltip_
-      .html("students enrolled: " + subgroupName + " Year " + subgroupYear)
+      .html("students enrolled: " + subgroupName + "<br>" + " Year " + subgroupYear)
       .style("opacity", 1)
   }
   var mousemove = function (d) {
