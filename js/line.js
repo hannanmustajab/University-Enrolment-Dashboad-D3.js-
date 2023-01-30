@@ -1,7 +1,7 @@
 
 // set the dimensions and margins of the graph
 var margin = { top: 10, right: 100, bottom: 30, left: 30 },
-  width = 560 - margin.left - margin.right,
+  width = 700 - margin.left - margin.right,
   height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -22,7 +22,7 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
     d.time = parsetime(d.time);
   });
 
-  
+
   // List of groups (here I have one group per column)
   // var allGroup = ["valueA", "valueB", "valueC"]
   // var allGroup = ["India", "Pakistan", "Italy"]
@@ -47,7 +47,7 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
   var x = d3.scaleTime()
     .domain(d3.extent(data, function (d) { return (d.time); }))
     .range([0, width]);
-    svg_line.append("g")
+  svg_line.append("g")
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x));
 
@@ -55,7 +55,7 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
   var y = d3.scaleLinear()
     .domain([0, 200000])
     .range([height, 0]);
-    svg_line.append("g")
+  svg_line.append("g")
     .attr("class", "yaxis")
     .call(d3.axisRight(y));
 
@@ -72,6 +72,16 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
     .style("stroke-width", 4)
     .style("fill", "none")
 
+  // Initialize dots with group a
+  var dot = svg_line
+    .selectAll('circle')
+    .data(data)
+    .enter()
+    .append('circle')
+    .attr("cx", function (d) { return x(+d.time) })
+    .attr("cy", function (d) { return y(+d.Afghanistan) })
+    .attr("r", 5)
+    .style("fill", "#69b3a2")
   // A function that update the chart
   function update(selectedGroup) {
 
@@ -94,10 +104,17 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
       )
       .attr("stroke", function (d) { return myColor(selectedGroup) })
 
-      svg_line.select('.yaxis')
+    svg_line.select('.yaxis')
       .transition()
       .duration(1000)
       .call(d3.axisRight(y));
+
+    dot
+      .data(dataFilter)
+      .transition()
+      .duration(1000)
+      .attr("cx", function (d) { return x(+d.time) })
+      .attr("cy", function (d) { return y(+d.value) })
   }
 
   // When the button is changed, run the updateChart function
