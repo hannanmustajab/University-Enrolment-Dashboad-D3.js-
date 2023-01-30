@@ -41,7 +41,7 @@ d3.csv("../csv/processed/private_public_by_year_processed.csv", function (data) 
     // color palette = one color per subgroup
     var color = d3.scaleOrdinal()
         .domain(subgroups)
-        .range(['#ffd60a', '#415a77'])
+        .range(['rgb(107,174,214)', "rgb(8,81,156)"])
 
     //stack the data? --> stack per subgroup
     var stackedData = d3.stack()

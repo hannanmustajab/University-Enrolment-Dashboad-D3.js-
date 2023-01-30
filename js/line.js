@@ -41,7 +41,7 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
   // A color scale: one color for each group
   var myColor = d3.scaleOrdinal()
     .domain(allGroup)
-    .range(d3.schemeSet2);
+    .range(["rgb(107,174,214)", "rgb(66,146,198)", "rgb(33,113,181)", "rgb(8,81,156)", "rgb(8,48,107)", "rgb(3,19,43)"]);
 
   // Add X axis --> it is a date format
   var x = d3.scaleTime()
