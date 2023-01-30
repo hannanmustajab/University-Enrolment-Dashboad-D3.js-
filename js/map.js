@@ -1,12 +1,12 @@
 // Function to compute the product of p1 and p2
-function myFunction(data) {
-    console.log(data);
-    const private_uni = { name: 'private', count: data.details.private_p };
-    const public_uni = { name: 'public', count: data.details.public_p };
-    // d3.select('#waffle_country')
+// function myFunction(data) {
+//     console.log(data);
+//     const private_uni = { name: 'private', count: data.details.private_p };
+//     const public_uni = { name: 'public', count: data.details.public_p };
+//     // d3.select('#waffle_country')
 
 
-}
+// }
 
 var width = 700,
     height = 300;
@@ -78,9 +78,6 @@ function drawMap(world, data) {
         }
     });
 
-    console.log(data);
-    console.log(populationById);
-
     features.forEach(function (d) {
         d.details = populationById[d.id] ? populationById[d.id] : {};
     });
@@ -120,12 +117,12 @@ function drawMap(world, data) {
             d3.select(".CountryCard")
                 .text(CountryCard);
 
-            d3.select(".name_country")
-                .text("Name: " + d.properties.name);
+            d3.select("#name_country")
+                .text( d.properties.name);
 
             var oldUniNameHeading = "Oldest University : " + d.details.university;
-            d3.select(".oldest_university")
-                .text("Oldest University: " + d.details.university);
+            d3.select("#oldest_university")
+                .text( d.details.university);
 
             d3.select(".private")
                 .text(d.details.private);

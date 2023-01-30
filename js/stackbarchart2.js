@@ -19,8 +19,6 @@ d3.csv("../csv/processed/private_public_by_year_processed.csv", function (data) 
     // List of subgroups = header of the csv files = soil condition here
     var subgroups = data.columns.slice(1)
 
-    console.log(subgroups);
-
     // List of groups = species here = value of the first column called group -> I show them on the X axis
     var groups = d3.map(data, function (d) { return (d.year) }).keys()
 
