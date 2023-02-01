@@ -44,7 +44,7 @@ d3.csv("../csv/processed/income_group_by_year.csv", function (data) {
     .domain([0, 200000000])
     .range([height_stackbar, 0]);
   svg_stack.append("g")
-    .call(d3.axisLeft(y));
+    .call(d3.axisRight(y));
 
   // color palette = one color per subgroup
   var color = d3.scaleOrdinal()
@@ -74,7 +74,7 @@ d3.csv("../csv/processed/income_group_by_year.csv", function (data) {
     var subgroupName = d3.select(this.parentNode).datum().key;
     var subgroupValue = d.data[subgroupName];
     tooltip
-      .html("subgroup: " + subgroupName + "<br>" + "Value: " + subgroupValue)
+      .html(subgroupName + "<br>" + d3.format(".2s")(subgroupValue))
       .style("opacity", 1)
   }
   var mousemove = function (d) {
@@ -97,7 +97,7 @@ d3.csv("../csv/processed/income_group_by_year.csv", function (data) {
     .data(subgroups)
     .enter()
     .append("rect")
-    .attr("x", 20)
+    .attr("x", 70)
     .attr("y", function (d, i) { return 5 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
     .attr("width", size)
     .attr("height", size)
@@ -108,7 +108,7 @@ d3.csv("../csv/processed/income_group_by_year.csv", function (data) {
     .data(subgroups)
     .enter()
     .append("text")
-    .attr("x", 20 + size * 1.2)
+    .attr("x", 70 + size * 1.2)
     .attr("y", function (d, i) { return 5 + i * (size + 5) + (size / 2) }) // 100 is where the first dot appears. 25 is the distance between dots
     .style("fill", function (d) { return color(d) })
     .text(function (d) { return d })
