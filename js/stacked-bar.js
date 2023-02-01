@@ -12,6 +12,20 @@ var svg_stack = d3.select("#stacked_bar")
   .attr("transform",
     "translate(" + margin.left + "," + margin.top + ")");
 
+
+svg_stack.append("text")
+  .attr("text-anchor", "end")
+  .attr("x", width - 300)
+  .attr("y", height + margin.top + 30)
+  .text("Year");
+
+// Y axis label:
+svg_stack.append("text")
+  .attr("text-anchor", "end")
+  .attr("transform", "rotate(-90)")
+  .attr("y", -margin.left + 20)
+  .attr("x", -margin.top - 80)
+  .text("Number of Students")
 // Parse the Data
 d3.csv("../csv/processed/income_group_by_year.csv", function (data) {
   // console.log(data);

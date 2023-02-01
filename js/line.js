@@ -13,6 +13,21 @@ var svg_line = d3.select("#line-chart")
   .attr("transform",
     "translate(" + margin.left + "," + margin.top + ")");
 
+svg_line.append("text")
+  .attr("text-anchor", "end")
+  .attr("x", width - 350)
+  .attr("y", height + margin.top + 20)
+  .text("Year");
+
+// Y axis label:
+svg_line.append("text")
+  .attr("text-anchor", "end")
+  .attr("transform", "rotate(-90)")
+  .attr("y", -margin.left + 20)
+  .attr("x", -margin.top - 80)
+  .text("Number of Students")
+
+
 //Read the data
 d3.csv("csv/processed/students_by_country_year.csv", function (data) {
   console.log(data);
