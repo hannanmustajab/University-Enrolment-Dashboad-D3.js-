@@ -24,8 +24,7 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
 
 
   // List of groups (here I have one group per column)
-  // var allGroup = ["valueA", "valueB", "valueC"]
-  // var allGroup = ["India", "Pakistan", "Italy"]
+
   var allGroup = Object.keys(data[0]);
   allGroup.shift();
 
@@ -71,8 +70,6 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
     .attr("stroke", function (d) { return myColor("valueA") })
     .style("stroke-width", 4)
     .style("fill", "none")
-
-
 
   // ----------------
   // Create a tooltip
@@ -146,8 +143,6 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
       .transition()
       .duration(1000)
       .call(d3.axisRight(y));
-
-
 
     dot
       .data(dataFilter)
