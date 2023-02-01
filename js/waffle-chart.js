@@ -15,10 +15,10 @@ function d3waffle() {
     selection.each(function (data) {
 
       selection.selectAll("*").remove();
-      
+
 
       /* setting parameters and data */
-      var idcontainer = "waffle-chart"; // I need to change thiz plz
+      var idcontainer = "waffle-chart";
       var total = d3.sum(data, function (d) { return d.value; });
 
       /* updating data */
@@ -49,7 +49,7 @@ function d3waffle() {
       var gridSize = ((height - margin.top - margin.bottom) / rows)
 
       /* setting the container */
-      var svg = selection.append("svg")
+      var svg_waffle = selection.append("svg")
         .attr("width", "100%")
         .attr("height", height + "px")
         .append("g")
@@ -70,7 +70,7 @@ function d3waffle() {
         .style("opacity", 0)
         .style("cursor", "default");
 
-      var nodes = svg.selectAll(".node")
+      var nodes = svg_waffle.selectAll(".node")
         .data(detaildata)
         .enter().append("g")
         .attr("class", "node")
@@ -109,7 +109,7 @@ function d3waffle() {
         .on("mousemove", mousemove)
         .style("opacity", 0)
 
-      var legend = svg.selectAll('.legend')
+      var legend = svg_waffle.selectAll('.legend')
         .data(data)
         .enter().append('g')
         .attr('class', function (d) { return "legend" + " " + d.class; })
@@ -223,7 +223,6 @@ function slugify(text) {
     .trim();                        // Trim - from end of text
 }
 
-/* http://stackoverflow.com/questions/12303989/cartesian-product-of-multiple-arrays-in-javascript */
 function cartesianprod(paramArray) {
 
   function addTo(curr, args) {
