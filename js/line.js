@@ -15,7 +15,7 @@ var svg_line = d3.select("#line-chart")
 
 //Read the data
 d3.csv("csv/processed/students_by_country_year.csv", function (data) {
-console.log(data);
+  console.log(data);
 
   var parsetime = d3.timeParse("%Y-%m-%d");
   data.forEach(function (d) {
@@ -24,8 +24,7 @@ console.log(data);
 
 
   // List of groups (here I have one group per column)
-  // var allGroup = ["valueA", "valueB", "valueC"]
-  // var allGroup = ["India", "Pakistan", "Italy"]
+
   var allGroup = Object.keys(data[0]);
   allGroup.shift();
 
@@ -72,8 +71,6 @@ console.log(data);
     .style("stroke-width", 4)
     .style("fill", "none")
 
-
-
   // ----------------
   // Create a tooltip
   // ----------------
@@ -92,9 +89,9 @@ console.log(data);
 
     var subgroupName = +d.value;
     var subgroupYear = d.time.getFullYear();
-  
+
     tooltip_
-      .html("students enrolled: " +subgroupName +  '<br>'+" Year " + subgroupYear)
+      .html("students enrolled: " + subgroupName + '<br>' + " Year " + subgroupYear)
       .style("opacity", 1)
   }
   var mousemove = function (d) {
@@ -146,8 +143,6 @@ console.log(data);
       .transition()
       .duration(1000)
       .call(d3.axisRight(y));
-
-
 
     dot
       .data(dataFilter)
