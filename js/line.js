@@ -92,12 +92,9 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
 
     var studentsEnrolled = +d.value;
     var subgroupYear = d.time.getFullYear();
-    // var subgroupValue = d.data[subgroupName];
-    // console.log(subgroupYear)
 
-    // console.log(d);
     tooltip_
-      .html("students enrolled: " + d3.format(".2s")(studentsEnrolled) + "<br>" + " Year " + subgroupYear)
+      .html("students enrolled: " + subgroupName + '<br>' + " Year " + subgroupYear)
       .style("opacity", 1)
   }
   var mousemove = function (d) {
@@ -123,10 +120,6 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
     .on("mouseover", mouseover)
     .on("mousemove", mousemove)
     .on("mouseleave", mouseleave)
-
-
-
-
 
   // A function that update the chart
   function update(selectedGroup) {

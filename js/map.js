@@ -14,19 +14,21 @@ var zoom = d3.zoom()
         map.attr("transform", transform);
     });
 
+var selectedCountry;
 svg.call(zoom);
 
 var map = svg.append("g")
     .attr("class", "map");
+var tooltip = d3.select("div.tooltip");
 
+d3.queue()
 d3.queue()
     .defer(d3.json, "js/50m.json")
     .defer(d3.csv, "../csv/processed/merged_dataset.csv")
     .await(function (error, world, data) {
         if (error) {
             console.error('Oh dear, something went wrong: ' + error);
-        }
-        else {
+        } else {
             drawMap(world, data);
         }
     });
@@ -56,6 +58,8 @@ function drawMap(world, data) {
         const public_percentage = ((+d.Public) / (+d.Private + +d.Public)) * 100;
         // Calculate % of private universities.
         const private_percentage = 100 - public_percentage;
+        let private01 = +d.private01 ? "Private" : "Public";
+
         populationById[d.countrycode] = {
             university: d.University,
             private: +d.Private,
@@ -63,14 +67,18 @@ function drawMap(world, data) {
             count: +d.total_students,
             year: d.founded_in,
             private_p: private_percentage,
-            public_p: public_percentage
-
+            public_p: public_percentage,
+            uni_status: private01,
+            founded_year: d.founded_in,
+            total_uni: d.total_universities
         }
     });
 
     features.forEach(function (d) {
         d.details = populationById[d.id] ? populationById[d.id] : {};
     });
+
+
 
     map.append("g")
         .selectAll("path")
@@ -86,6 +94,18 @@ function drawMap(world, data) {
         .style("fill", function (d) {
             return d.details && d.details.count ? color(d.details.count) : undefined;
         })
+        .attr("fill", "white")
+        .attr("d", path)
+        .on("mouseover", function (d, i) {
+            d3.select(this).attr("fill", "grey").attr("stroke-width", 2);
+            return tooltip.style("hidden", false).html(d.name);
+        })
+        .on("mousemove", function (d) {
+            tooltip.classed("hidden", false)
+                .style("left", (d3.mouse(this)[0] - 90) + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
+                .style("top", (d3.mouse(this)[1]) + "px")
+                .html(d.properties.name);
+        })
         .on('mouseover', function (d) {
             d3.select(this)
                 .style("stroke", "white")
@@ -94,19 +114,15 @@ function drawMap(world, data) {
 
 
             var DetailText = d.details.university + " is the oldest university in " + d.properties.name +
-                ". It was founded in " + d.details.year + " and has " + d3.format(".2s")(d.details.count)
-                + " students enrolled.";
-
+                ". It was founded in " + d.details.year + " and has " + d3.format(".2s")(d.details.count) +
+                " students enrolled.";
 
             d3.select(".details")
                 .text(DetailText)
                 .style("font-size", "20px")
                 .style("fill", "red");
 
-            d3.select(".CountryCard")
-                .text(d.properties.name);
-
-            d3.select("#name_country")
+            d3.selectAll(".Country")
                 .text(d.properties.name);
 
             d3.select("#oldest_university")
@@ -129,8 +145,13 @@ function drawMap(world, data) {
 
             d3.select("#private_uni_progressbar")
                 .style("width", d3.format(".2s")(d.details.private_p) + '%')
-                .text('Private')
+                .text('Private');
 
+            d3.select("#university-type")
+                .text(d.details.uni_status)
+
+            d3.select("#founded_year")
+                .text(d.details.founded_year);
 
             d3.select("#public_uni_progressbar")
                 .style("width", d3.format(".2s")(d.details.public_p) + '%')
@@ -141,6 +162,9 @@ function drawMap(world, data) {
 
             d3.select('.details')
                 .style('visibility', "visible")
+
+            d3.select('.total-universities')
+                .text(d.details.total_uni)
 
             update(d.details);
 

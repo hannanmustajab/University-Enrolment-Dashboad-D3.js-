@@ -1,5 +1,2 @@
-incomegroup,Number of Student,count_percentage
-High income,279100784,33.11192165740868
-Low income,21003981,2.4918675017613006
-Lower middle income,228999209,27.167977672239562
-Upper middle income,313797223,37.22823316859046
+High income,Low income,Lower middle income,Upper middle income
+279100784,21003981,228999209,313797223
