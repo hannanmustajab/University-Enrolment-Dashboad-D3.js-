@@ -1,6 +1,6 @@
 // set the dimensions and margins of the graph
 var margin = { top: 10, right: 30, bottom: 20, left: 50 },
-  width_stackbar = 600 - margin.left - margin.right,
+  width_stackbar = 550 - margin.left - margin.right,
   height_stackbar = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -19,7 +19,13 @@ d3.csv("../csv/processed/income_group_by_year.csv", function (data) {
   // List of subgroups = header of the csv files = soil condition here
   var subgroups = data.columns.slice(1)
 
-  console.log(subgroups);
+  var parsetime = d3.timeParse("%Y-%m-%d");
+  data.forEach(function (d) {
+    d.year = parsetime(d.year);
+  });
+  data.forEach(function (d) {
+    d.year = d.year.getFullYear();
+  });
 
   // List of groups = species here = value of the first column called group -> I show them on the X axis
   var groups = d3.map(data, function (d) { return (d.year) }).keys()
