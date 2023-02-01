@@ -10,6 +10,8 @@
    <title>University Enrolment Dataset</title>
    <!-- Custom fonts for this template-->
    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
    <link
       href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
       rel="stylesheet">
@@ -155,6 +157,7 @@
                            <div id="map">
                               <div class="tooltip"></div>
                            </div>
+                           <div id="map-legend"></div>
 
                         </div>
 
@@ -176,10 +179,6 @@
                                  style="font-size: large; font-weight: bolder;" id="founded_year"></span>. It is a <span
                                  style="font-size: large; font-weight: bolder;" id="university-type"></span> University
                            </p>
-                           <!-- <p class="name_country strong">Name: </p>
-                           <p class="oldest_university">Oldest University: </p>
-                           <p class="countStudent">Students enrolled: </p>
-                           <p class="year">Founded Year: </p> -->
                            <h3></h3>
                         </div>
                      </div>
@@ -217,7 +216,7 @@
                            </h6>
                         </div>
 
-                        <div class="card-body" id="pie_chart">hey
+                        <div class="card-body" id="waffle-chart">
                         </div>
                      </div>
 
@@ -269,7 +268,7 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.js"></script>
    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
-   <script type="module" src="js/waffle-chart.js"></script>
+   <script src="js/waffle.js"></script>
    <script src="js/pie.js"></script>
    <script src="js/line.js"></script>
    <script src="js/map.js"></script>
