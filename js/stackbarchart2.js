@@ -81,7 +81,7 @@ d3.csv("../csv/processed/private_public_by_year_processed.csv", function (data) 
         var subgroupName = d3.select(this.parentNode).datum().key;
         var subgroupValue = d.data[subgroupName];
         tooltip
-            .html(subgroupName.toUpperCase() + "<br>" + d3.format(".2s")(subgroupValue))
+            .html(subgroupName + "<br>" + d3.format(".2s")(subgroupValue))
             .style("opacity", 1)
     }
     var mousemove = function (d) {
