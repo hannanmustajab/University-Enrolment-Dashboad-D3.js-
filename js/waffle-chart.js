@@ -4,19 +4,21 @@ function d3waffle() {
     scale = 1,
     rows = 10,
     adjust = 0.8,
-    colorscale = d3.scale.category20(),
+    colorscale = d3.scaleOrdinal(d3.schemeCategory20),
     appearancetimes = function (d, i) { return 500; },
     height = 200,
     magic_padding = 5;
 
   function chart(selection) {
+    // console.log(selection);
 
     selection.each(function (data) {
 
       selection.selectAll("*").remove();
+      
 
       /* setting parameters and data */
-      var idcontainer = selection[0][0].id; // I need to change thiz plz
+      var idcontainer = "waffle-chart"; // I need to change thiz plz
       var total = d3.sum(data, function (d) { return d.value; });
 
       /* updating data */
