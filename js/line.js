@@ -91,7 +91,7 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
     var subgroupYear = d.time.getFullYear();
 
     tooltip_
-      .html("students enrolled: " + subgroupName + '<br>' + " Year " + subgroupYear)
+      .html("students enrolled: " + d3.format(".2s")(studentsEnrolled) + '<br>' + " Year " + subgroupYear)
       .style("opacity", 1)
   }
   var mousemove = function (d) {
