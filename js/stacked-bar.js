@@ -106,12 +106,12 @@ d3.csv("../csv/processed/income_group_by_year.csv", function (data) {
   // ADD LEGENDS
   //--------------
   // Add one dot in the legend for each name.
-  var size = 20
+  var size = 10
   svg_stack.selectAll("mydots")
     .data(subgroups)
     .enter()
     .append("rect")
-    .attr("x", 70)
+    .attr("x", 80)
     .attr("y", function (d, i) { return 5 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
     .attr("width", size)
     .attr("height", size)
@@ -122,7 +122,7 @@ d3.csv("../csv/processed/income_group_by_year.csv", function (data) {
     .data(subgroups)
     .enter()
     .append("text")
-    .attr("x", 70 + size * 1.2)
+    .attr("x", 80 + size * 1.2)
     .attr("y", function (d, i) { return 5 + i * (size + 5) + (size / 2) }) // 100 is where the first dot appears. 25 is the distance between dots
     .style("fill", function (d) { return color(d) })
     .text(function (d) { return d })
