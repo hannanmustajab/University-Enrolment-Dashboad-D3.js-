@@ -87,7 +87,7 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
   // Three function that change the tooltip when user hover / move / leave a cell
   var mouseover = function (d) {
 
-    var subgroupName = +d.value;
+    var studentsEnrolled = +d.value;
     var subgroupYear = d.time.getFullYear();
 
     tooltip_

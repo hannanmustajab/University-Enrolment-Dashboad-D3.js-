@@ -22,6 +22,7 @@ var map = svg.append("g")
 var tooltip = d3.select("div.tooltip");
 
 d3.queue()
+d3.queue()
     .defer(d3.json, "js/50m.json")
     .defer(d3.csv, "../csv/processed/merged_dataset.csv")
     .await(function (error, world, data) {
@@ -77,7 +78,7 @@ function drawMap(world, data) {
         d.details = populationById[d.id] ? populationById[d.id] : {};
     });
 
-    
+
 
     map.append("g")
         .selectAll("path")
@@ -161,7 +162,7 @@ function drawMap(world, data) {
 
             d3.select('.details')
                 .style('visibility', "visible")
-            
+
             d3.select('.total-universities')
                 .text(d.details.total_uni)
 
