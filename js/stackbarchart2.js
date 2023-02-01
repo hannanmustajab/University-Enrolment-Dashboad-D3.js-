@@ -29,6 +29,12 @@ d3.csv("../csv/processed/private_public_by_year_processed.csv", function (data) 
     // List of groups = species here = value of the first column called group -> I show them on the X axis
     var groups = d3.map(data, function (d) { return (d.year) }).keys()
 
+    const capitalized = subgroups.map(element => {
+        return element.toUpperCase();
+      });
+    
+      console.log(capitalized);
+
 
     // Add X axis
     var x = d3.scaleBand()
@@ -75,7 +81,7 @@ d3.csv("../csv/processed/private_public_by_year_processed.csv", function (data) 
         var subgroupName = d3.select(this.parentNode).datum().key;
         var subgroupValue = d.data[subgroupName];
         tooltip
-            .html("University: " + subgroupName + "<br>" + "Number of Students: " + d3.format(".2s")(subgroupValue))
+            .html(subgroupName.toUpperCase() + "<br>" + "Number of Students: " + d3.format(".2s")(subgroupValue))
             .style("opacity", 1)
     }
     var mousemove = function (d) {
@@ -88,8 +94,32 @@ d3.csv("../csv/processed/private_public_by_year_processed.csv", function (data) 
             .style("opacity", 0)
     }
 
+    // -------------
+    // ADD LEGENDS
+    //--------------
+    // Add one dot in the legend for each name.
+    var size = 20
+    svg.selectAll("mydots")
+    .data(capitalized)
+    .enter()
+    .append("rect")
+        .attr("x",20 )
+        .attr("y", function(d,i){ return 5 + i*(size+5)}) // 100 is where the first dot appears. 25 is the distance between dots
+        .attr("width", size)
+        .attr("height", size)
+        .style("fill", function(d){ return color(d)})
 
-
+    // Add one dot in the legend for each name.
+    svg.selectAll("mylabels")
+    .data(capitalized)
+    .enter()
+    .append("text")
+        .attr("x", 20 + size*1.2)
+        .attr("y", function(d,i){ return 5 + i*(size+5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
+        .style("fill", function(d){ return color(d)})
+        .text(function(d){ return d})
+        .attr("text-anchor", "left")
+        .style("alignment-baseline", "middle")
 
     // Show the bars
     svg.append("g")

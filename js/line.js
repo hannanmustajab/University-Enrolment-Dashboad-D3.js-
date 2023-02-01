@@ -92,12 +92,9 @@ console.log(data);
 
     var subgroupName = +d.value;
     var subgroupYear = d.time.getFullYear();
-    // var subgroupValue = d.data[subgroupName];
-    // console.log(subgroupYear)
-
-    // console.log(d);
+  
     tooltip_
-      .html("students enrolled: " + subgroupName + " Year " + subgroupYear)
+      .html("students enrolled: " +subgroupName +  '<br>'+" Year " + subgroupYear)
       .style("opacity", 1)
   }
   var mousemove = function (d) {
@@ -123,10 +120,6 @@ console.log(data);
     .on("mouseover", mouseover)
     .on("mousemove", mousemove)
     .on("mouseleave", mouseleave)
-
-
-
-
 
   // A function that update the chart
   function update(selectedGroup) {
