@@ -110,8 +110,8 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
   }
   var mousemove = function (d) {
     tooltip_
-      .style("left", (d3.mouse(this)[0] + 90) + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
-      .style("top", (d3.mouse(this)[1]) + "px")
+      .style("left", (d3.mouse(this)[0] + 10) + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
+      .style("top", (d3.mouse(this)[1] + 10) + "px")
   }
   var mouseleave = function (d) {
     tooltip_

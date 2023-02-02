@@ -1,4 +1,4 @@
-function d3waffle() {
+function d3waffle_() {
   var margin = { top: 10, right: 10, bottom: 10, left: 10 },
     icon = "&#9632;",
     scale = 1,
