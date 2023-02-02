@@ -1,188 +1,188 @@
 Country,countrycode,region,students
-Seychelles,SYC,Sub-Saharan Africa,237.0
-Saint Kitts And Nevis,KNA,Latin America and Caribbean,239.0
-Tonga,TON,East Asia and Pacific,324.0
-Sao Tome And Principe,STP,Sub-Saharan Africa,371.0
-Comoros,COM,Sub-Saharan Africa,646.0
-Solomon Islands,SLB,East Asia and Pacific,1322.0
-San Marino,SMR,Europe and Central Asia,1337.0
-Belize,BLZ,Latin America and Caribbean,2051.0
-Faroe Islands,FRO,Europe and Central Asia,2118.0
-Aruba,ABW,Latin America and Caribbean,3870.0
-Monaco,MCO,Europe and Central Asia,4922.0
-Liechtenstein,LIE,Europe and Central Asia,5530.0
-Guinea Bissau,GNB,Sub-Saharan Africa,5885.0
-Andorra,AND,Europe and Central Asia,7431.0
-Timor Leste,TLS,East Asia and Pacific,8953.0
-Samoa,WSM,East Asia and Pacific,12020.0
-The Gambia,GMB,Sub-Saharan Africa,14929.0
-France - French Polynesia,PYF,East Asia and Pacific,15063.0
-"Bahamas, The",BHS,Latin America and Caribbean,16797.0
-Djibouti,DJI,Middle East and North Africa,20306.0
-Equatorial Guinea,GNQ,Sub-Saharan Africa,21257.0
-Sierra Leone,SLE,Sub-Saharan Africa,21697.0
-Luxembourg,LUX,Europe and Central Asia,22979.0
-Grenada,GRD,Latin America and Caribbean,25147.0
-Iceland,ISL,Europe and Central Asia,26448.0
-Suriname,SUR,Latin America and Caribbean,30628.0
-Brunei Darussalam,BRN,East Asia and Pacific,31151.0
-Lesotho,LSO,Sub-Saharan Africa,37563.0
-Barbados,BRB,Latin America and Caribbean,38702.0
-Eritrea,ERI,Sub-Saharan Africa,40507.0
-Central African Republic,CAF,Sub-Saharan Africa,43370.0
-Eswatini,SWZ,Sub-Saharan Africa,45998.0
-Guyana,GUY,Latin America and Caribbean,46336.0
-South Sudan,SSD,Sub-Saharan Africa,50265.0
-Bhutan,BTN,South Asia,53416.0
-Cabo Verde,CPV,Sub-Saharan Africa,55968.0
-Maldives,MDV,South Asia,57035.0
-Qatar,QAT,Middle East and North Africa,66520.0
-Malta,MLT,Middle East and North Africa,68326.0
-Chad,TCD,Sub-Saharan Africa,81171.0
-Mauritius,MUS,Sub-Saharan Africa,86759.0
-Burundi,BDI,Sub-Saharan Africa,92085.0
-Haiti,HTI,Latin America and Caribbean,102830.0
-Papua New Guinea,PNG,East Asia and Pacific,109784.0
-Niger,NER,Sub-Saharan Africa,110442.0
-Fiji,FJI,East Asia and Pacific,122996.0
-Rwanda,RWA,Sub-Saharan Africa,130323.0
-Mauritania,MRT,Sub-Saharan Africa,132515.0
-"Congo, Rep",COG,Sub-Saharan Africa,141940.0
-Trinidad And Tobago,TTO,Latin America and Caribbean,142461.0
-Liberia,LBR,Sub-Saharan Africa,144010.0
-Mali,MLI,Sub-Saharan Africa,151665.0
-Botswana,BWA,Sub-Saharan Africa,153183.0
-Montenegro,MNE,Europe and Central Asia,164191.0
-Gabon,GAB,Sub-Saharan Africa,166955.0
-Malawi,MWI,Sub-Saharan Africa,169732.0
-Bahrain,BHR,Middle East and North Africa,171507.0
-Turkmenistan,TKM,Europe and Central Asia,190630.0
-Togo,TGO,Sub-Saharan Africa,193161.0
-Cyprus,CYP,Europe and Central Asia,240620.0
-Lao Pdr,LAO,East Asia and Pacific,251645.0
-Jamaica,JAM,Latin America and Caribbean,254624.0
-Zambia,ZMB,Sub-Saharan Africa,270518.0
-Mozambique,MOZ,Sub-Saharan Africa,273157.0
-Estonia,EST,Europe and Central Asia,290374.0
-Burkina Faso,BFA,Sub-Saharan Africa,329367.0
-Singapore,SGP,East Asia and Pacific,351936.0
-Somalia,SOM,Sub-Saharan Africa,361610.0
-Namibia,NAM,Sub-Saharan Africa,367130.0
-Kuwait,KWT,Middle East and North Africa,410512.0
-Zimbabwe,ZWE,Sub-Saharan Africa,423472.0
-United Arab Emirates,ARE,Middle East and North Africa,447162.0
-Denmark,DNK,Europe and Central Asia,489252.0
-Tajikistan,TJK,Europe and Central Asia,519605.0
-Madagascar,MDG,Sub-Saharan Africa,524872.0
-Afghanistan,AFG,South Asia,555026.0
-Albania,ALB,Europe and Central Asia,558980.0
-Uganda,UGA,Sub-Saharan Africa,560941.0
-North Macedonia,MKD,Europe and Central Asia,564559.0
-Angola,AGO,Sub-Saharan Africa,588468.0
-Yemen,YEM,Middle East and North Africa,599588.0
-Senegal,SEN,Sub-Saharan Africa,599702.0
-Tanzania,TZA,Sub-Saharan Africa,605362.0
-Mongolia,MNG,East Asia and Pacific,609795.0
-Guinea,GIN,Sub-Saharan Africa,627202.0
-Latvia,LVA,Europe and Central Asia,680581.0
-Slovenia,SVN,Europe and Central Asia,683351.0
-Oman,OMN,Middle East and North Africa,692807.0
-Benin,BEN,Sub-Saharan Africa,707178.0
-Finland,FIN,Europe and Central Asia,793685.0
-Bosnia And Herzegovina,BIH,Europe and Central Asia,806304.0
-Honduras,HND,Latin America and Caribbean,816431.0
-Sri Lanka,LKA,South Asia,826366.0
-Moldova,MDA,Europe and Central Asia,858509.0
-Hungary,HUN,Europe and Central Asia,906742.0
-Norway,NOR,Europe and Central Asia,908423.0
-"Congo, Dem Rep",COD,Sub-Saharan Africa,935307.0
-Cameroon,CMR,Sub-Saharan Africa,938866.0
-El Salvador,SLV,Latin America and Caribbean,949675.0
-Georgia,GEO,Europe and Central Asia,991835.0
-Belgium,BEL,Europe and Central Asia,997207.0
-Cambodia,KHM,East Asia and Pacific,1025157.0
-Lithuania,LTU,Europe and Central Asia,1027555.0
-Cote D'Ivoire,CIV,Sub-Saharan Africa,1037943.0
-Armenia,ARM,Europe and Central Asia,1054353.0
-China - Hong Kong,HKG,East Asia and Pacific,1058519.0
-Kyrgyz Republic,KGZ,Europe and Central Asia,1065576.0
-Nicaragua,NIC,Latin America and Caribbean,1080902.0
-Palestine,PSE,Middle East and North Africa,1099883.0
-Uruguay,URY,Latin America and Caribbean,1210473.0
-Libya,LBY,Middle East and North Africa,1217155.0
-Costa Rica,CRI,Latin America and Caribbean,1254519.0
-Croatia,HRV,Europe and Central Asia,1265566.0
-Ghana,GHA,Sub-Saharan Africa,1278717.0
-Lebanon,LBN,Middle East and North Africa,1308402.0
-Jordan,JOR,Middle East and North Africa,1339073.0
-Tunisia,TUN,Middle East and North Africa,1367634.0
-Panama,PAN,Latin America and Caribbean,1415537.0
-Paraguay,PRY,Latin America and Caribbean,1463057.0
-Slovak Republic,SVK,Europe and Central Asia,1517846.0
-Switzerland,CHE,Europe and Central Asia,1636539.0
-Azerbaijan,AZE,Europe and Central Asia,1699585.0
-Cuba,CUB,Latin America and Caribbean,1770174.0
-Nepal,NPL,South Asia,1863882.0
-Bulgaria,BGR,Europe and Central Asia,1896312.0
-Sweden,SWE,Europe and Central Asia,1942332.0
-Serbia,SRB,Europe and Central Asia,1943469.0
-Kenya,KEN,Sub-Saharan Africa,2044753.0
-Sudan,SDN,Sub-Saharan Africa,2079138.0
-Greece,GRC,Europe and Central Asia,2210980.0
-Portugal,PRT,Europe and Central Asia,2225578.0
-Czech Republic,CZE,Europe and Central Asia,2319657.0
-Israel,ISR,Middle East and North Africa,2399533.0
-New Zealand,NZL,East Asia and Pacific,2448365.0
-Belarus,BLR,Europe and Central Asia,2514917.0
-Ethiopia,ETH,Sub-Saharan Africa,2521441.0
-Austria,AUT,Europe and Central Asia,2583891.0
-Dominican Republic,DOM,Latin America and Caribbean,2644678.0
-Bolivia,BOL,Latin America and Caribbean,2667842.0
-Uzbekistan,UZB,Europe and Central Asia,2740467.0
-Romania,ROU,Europe and Central Asia,2995041.0
-Morocco,MAR,Middle East and North Africa,3028018.0
-Syrian Arab Republic,SYR,Middle East and North Africa,3084927.0
-Iraq,IRQ,Middle East and North Africa,3123419.0
-Ecuador,ECU,Latin America and Caribbean,3283408.0
-Malaysia,MYS,East Asia and Pacific,3536357.0
-Kazakhstan,KAZ,Europe and Central Asia,3559611.0
-Ireland,IRL,Europe and Central Asia,4105582.0
-Chile,CHL,Latin America and Caribbean,4182734.0
-Saudi Arabia,SAU,Middle East and North Africa,4218575.0
-Netherlands,NLD,Europe and Central Asia,4480908.0
-Algeria,DZA,Middle East and North Africa,4493616.0
-South Africa,ZAF,Sub-Saharan Africa,4938872.0
-Bangladesh,BGD,South Asia,5430354.0
-Peru,PER,Latin America and Caribbean,5610259.0
-Pakistan,PAK,South Asia,5738757.0
-Venezuela,VEN,Latin America and Caribbean,5862043.0
-Nigeria,NGA,Sub-Saharan Africa,6006787.0
-"Korea, Dem People���S Rep",PRK,East Asia and Pacific,6679728.0
-Vietnam,VNM,East Asia and Pacific,6963903.0
-Australia,AUS,East Asia and Pacific,8151086.0
-Myanmar,MMR,East Asia and Pacific,9118549.0
-Poland,POL,Europe and Central Asia,11021514.0
-Colombia,COL,Latin America and Caribbean,11452806.0
-Argentina,ARG,Latin America and Caribbean,11907365.0
-Spain,ESP,Europe and Central Asia,11925594.0
-Egypt,EGY,Middle East and North Africa,12292342.0
-Thailand,THA,East Asia and Pacific,12680068.0
-Ukraine,UKR,Europe and Central Asia,13085616.0
-Turkey,TUR,Europe and Central Asia,13446868.0
-"Korea, Rep",KOR,East Asia and Pacific,14692294.0
-Guatemala,GTM,Latin America and Caribbean,15508030.0
-Canada,CAN,North America,15739589.0
-France,FRA,Europe and Central Asia,16069902.0
-Italy,ITA,Europe and Central Asia,16490616.0
-Indonesia,IDN,East Asia and Pacific,17201532.0
-Iran,IRN,Middle East and North Africa,17325572.0
-Germany,DEU,Europe and Central Asia,18990964.0
-Japan,JPN,East Asia and Pacific,26212898.0
-Mexico,MEX,Latin America and Caribbean,28615985.0
-Brazil,BRA,Latin America and Caribbean,32573449.0
-United Kingdom,GBR,Europe and Central Asia,32752878.0
-Russian Federation,RUS,Europe and Central Asia,34933929.0
-Philippines,PHL,East Asia and Pacific,38929878.0
-United States,USA,North America,53203189.0
-China,CHN,East Asia and Pacific,63595771.0
-India,IND,South Asia,97583864.0
+Seychelles,SYC,Sub-Saharan Africa,237
+Saint Kitts And Nevis,KNA,Latin America and Caribbean,239
+Tonga,TON,East Asia and Pacific,324
+Sao Tome And Principe,STP,Sub-Saharan Africa,371
+Comoros,COM,Sub-Saharan Africa,646
+Solomon Islands,SLB,East Asia and Pacific,1322
+San Marino,SMR,Europe and Central Asia,1337
+Belize,BLZ,Latin America and Caribbean,2051
+Faroe Islands,FRO,Europe and Central Asia,2118
+Aruba,ABW,Latin America and Caribbean,3870
+Monaco,MCO,Europe and Central Asia,4922
+Liechtenstein,LIE,Europe and Central Asia,5530
+Guinea Bissau,GNB,Sub-Saharan Africa,5885
+Andorra,AND,Europe and Central Asia,7431
+Timor Leste,TLS,East Asia and Pacific,8953
+Samoa,WSM,East Asia and Pacific,12020
+The Gambia,GMB,Sub-Saharan Africa,14929
+France - French Polynesia,PYF,East Asia and Pacific,15063
+"Bahamas, The",BHS,Latin America and Caribbean,16797
+Djibouti,DJI,Middle East and North Africa,20306
+Equatorial Guinea,GNQ,Sub-Saharan Africa,21257
+Sierra Leone,SLE,Sub-Saharan Africa,21697
+Luxembourg,LUX,Europe and Central Asia,22979
+Grenada,GRD,Latin America and Caribbean,25147
+Iceland,ISL,Europe and Central Asia,26448
+Suriname,SUR,Latin America and Caribbean,30628
+Brunei Darussalam,BRN,East Asia and Pacific,31151
+Lesotho,LSO,Sub-Saharan Africa,37563
+Barbados,BRB,Latin America and Caribbean,38702
+Eritrea,ERI,Sub-Saharan Africa,40507
+Central African Republic,CAF,Sub-Saharan Africa,43370
+Eswatini,SWZ,Sub-Saharan Africa,45998
+Guyana,GUY,Latin America and Caribbean,46336
+South Sudan,SSD,Sub-Saharan Africa,50265
+Bhutan,BTN,South Asia,53416
+Cabo Verde,CPV,Sub-Saharan Africa,55968
+Maldives,MDV,South Asia,57035
+Qatar,QAT,Middle East and North Africa,66520
+Malta,MLT,Middle East and North Africa,68326
+Chad,TCD,Sub-Saharan Africa,81171
+Mauritius,MUS,Sub-Saharan Africa,86759
+Burundi,BDI,Sub-Saharan Africa,92085
+Haiti,HTI,Latin America and Caribbean,102830
+Papua New Guinea,PNG,East Asia and Pacific,109784
+Niger,NER,Sub-Saharan Africa,110442
+Fiji,FJI,East Asia and Pacific,122996
+Rwanda,RWA,Sub-Saharan Africa,130323
+Mauritania,MRT,Sub-Saharan Africa,132515
+"Congo, Rep",COG,Sub-Saharan Africa,141940
+Trinidad And Tobago,TTO,Latin America and Caribbean,142461
+Liberia,LBR,Sub-Saharan Africa,144010
+Mali,MLI,Sub-Saharan Africa,151665
+Botswana,BWA,Sub-Saharan Africa,153183
+Montenegro,MNE,Europe and Central Asia,164191
+Gabon,GAB,Sub-Saharan Africa,166955
+Malawi,MWI,Sub-Saharan Africa,169732
+Bahrain,BHR,Middle East and North Africa,171507
+Turkmenistan,TKM,Europe and Central Asia,190630
+Togo,TGO,Sub-Saharan Africa,193161
+Cyprus,CYP,Europe and Central Asia,240620
+Lao Pdr,LAO,East Asia and Pacific,251645
+Jamaica,JAM,Latin America and Caribbean,254624
+Zambia,ZMB,Sub-Saharan Africa,270518
+Mozambique,MOZ,Sub-Saharan Africa,273157
+Estonia,EST,Europe and Central Asia,290374
+Burkina Faso,BFA,Sub-Saharan Africa,329367
+Singapore,SGP,East Asia and Pacific,351936
+Somalia,SOM,Sub-Saharan Africa,361610
+Namibia,NAM,Sub-Saharan Africa,367130
+Kuwait,KWT,Middle East and North Africa,410512
+Zimbabwe,ZWE,Sub-Saharan Africa,423472
+United Arab Emirates,ARE,Middle East and North Africa,447162
+Denmark,DNK,Europe and Central Asia,489252
+Tajikistan,TJK,Europe and Central Asia,519605
+Madagascar,MDG,Sub-Saharan Africa,524872
+Afghanistan,AFG,South Asia,555026
+Albania,ALB,Europe and Central Asia,558980
+Uganda,UGA,Sub-Saharan Africa,560941
+North Macedonia,MKD,Europe and Central Asia,564559
+Angola,AGO,Sub-Saharan Africa,588468
+Yemen,YEM,Middle East and North Africa,599588
+Senegal,SEN,Sub-Saharan Africa,599702
+Tanzania,TZA,Sub-Saharan Africa,605362
+Mongolia,MNG,East Asia and Pacific,609795
+Guinea,GIN,Sub-Saharan Africa,627202
+Latvia,LVA,Europe and Central Asia,680581
+Slovenia,SVN,Europe and Central Asia,683351
+Oman,OMN,Middle East and North Africa,692807
+Benin,BEN,Sub-Saharan Africa,707178
+Finland,FIN,Europe and Central Asia,793685
+Bosnia And Herzegovina,BIH,Europe and Central Asia,806304
+Honduras,HND,Latin America and Caribbean,816431
+Sri Lanka,LKA,South Asia,826366
+Moldova,MDA,Europe and Central Asia,858509
+Hungary,HUN,Europe and Central Asia,906742
+Norway,NOR,Europe and Central Asia,908423
+"Congo, Dem Rep",COD,Sub-Saharan Africa,935307
+Cameroon,CMR,Sub-Saharan Africa,938866
+El Salvador,SLV,Latin America and Caribbean,949675
+Georgia,GEO,Europe and Central Asia,991835
+Belgium,BEL,Europe and Central Asia,997207
+Cambodia,KHM,East Asia and Pacific,1025157
+Lithuania,LTU,Europe and Central Asia,1027555
+Cote D'Ivoire,CIV,Sub-Saharan Africa,1037943
+Armenia,ARM,Europe and Central Asia,1054353
+China - Hong Kong,HKG,East Asia and Pacific,1058519
+Kyrgyz Republic,KGZ,Europe and Central Asia,1065576
+Nicaragua,NIC,Latin America and Caribbean,1080902
+Palestine,PSE,Middle East and North Africa,1099883
+Uruguay,URY,Latin America and Caribbean,1210473
+Libya,LBY,Middle East and North Africa,1217155
+Costa Rica,CRI,Latin America and Caribbean,1254519
+Croatia,HRV,Europe and Central Asia,1265566
+Ghana,GHA,Sub-Saharan Africa,1278717
+Lebanon,LBN,Middle East and North Africa,1308402
+Jordan,JOR,Middle East and North Africa,1339073
+Tunisia,TUN,Middle East and North Africa,1367634
+Panama,PAN,Latin America and Caribbean,1415537
+Paraguay,PRY,Latin America and Caribbean,1463057
+Slovak Republic,SVK,Europe and Central Asia,1517846
+Switzerland,CHE,Europe and Central Asia,1636539
+Azerbaijan,AZE,Europe and Central Asia,1699585
+Cuba,CUB,Latin America and Caribbean,1770174
+Nepal,NPL,South Asia,1863882
+Bulgaria,BGR,Europe and Central Asia,1896312
+Sweden,SWE,Europe and Central Asia,1942332
+Serbia,SRB,Europe and Central Asia,1943469
+Kenya,KEN,Sub-Saharan Africa,2044753
+Sudan,SDN,Sub-Saharan Africa,2079138
+Greece,GRC,Europe and Central Asia,2210980
+Portugal,PRT,Europe and Central Asia,2225578
+Czech Republic,CZE,Europe and Central Asia,2319657
+Israel,ISR,Middle East and North Africa,2399533
+New Zealand,NZL,East Asia and Pacific,2448365
+Belarus,BLR,Europe and Central Asia,2514917
+Ethiopia,ETH,Sub-Saharan Africa,2521441
+Austria,AUT,Europe and Central Asia,2583891
+Dominican Republic,DOM,Latin America and Caribbean,2644678
+Bolivia,BOL,Latin America and Caribbean,2667842
+Uzbekistan,UZB,Europe and Central Asia,2740467
+Romania,ROU,Europe and Central Asia,2995041
+Morocco,MAR,Middle East and North Africa,3028018
+Syrian Arab Republic,SYR,Middle East and North Africa,3084927
+Iraq,IRQ,Middle East and North Africa,3123419
+Ecuador,ECU,Latin America and Caribbean,3283408
+Malaysia,MYS,East Asia and Pacific,3536357
+Kazakhstan,KAZ,Europe and Central Asia,3559611
+Ireland,IRL,Europe and Central Asia,4105582
+Chile,CHL,Latin America and Caribbean,4182734
+Saudi Arabia,SAU,Middle East and North Africa,4218575
+Netherlands,NLD,Europe and Central Asia,4480908
+Algeria,DZA,Middle East and North Africa,4493616
+South Africa,ZAF,Sub-Saharan Africa,4938872
+Bangladesh,BGD,South Asia,5430354
+Peru,PER,Latin America and Caribbean,5610259
+Pakistan,PAK,South Asia,5738757
+Venezuela,VEN,Latin America and Caribbean,5862043
+Nigeria,NGA,Sub-Saharan Africa,6006787
+"Korea, Dem People���S Rep",PRK,East Asia and Pacific,6679728
+Vietnam,VNM,East Asia and Pacific,6963903
+Australia,AUS,East Asia and Pacific,8151086
+Myanmar,MMR,East Asia and Pacific,9118549
+Poland,POL,Europe and Central Asia,11021514
+Colombia,COL,Latin America and Caribbean,11452806
+Argentina,ARG,Latin America and Caribbean,11907365
+Spain,ESP,Europe and Central Asia,11925594
+Egypt,EGY,Middle East and North Africa,12292342
+Thailand,THA,East Asia and Pacific,12680068
+Ukraine,UKR,Europe and Central Asia,13085616
+Turkey,TUR,Europe and Central Asia,13446868
+"Korea, Rep",KOR,East Asia and Pacific,14692294
+Guatemala,GTM,Latin America and Caribbean,15508030
+Canada,CAN,North America,15739589
+France,FRA,Europe and Central Asia,16069902
+Italy,ITA,Europe and Central Asia,16490616
+Indonesia,IDN,East Asia and Pacific,17201532
+Iran,IRN,Middle East and North Africa,17325572
+Germany,DEU,Europe and Central Asia,18990964
+Japan,JPN,East Asia and Pacific,26212898
+Mexico,MEX,Latin America and Caribbean,28615985
+Brazil,BRA,Latin America and Caribbean,32573449
+United Kingdom,GBR,Europe and Central Asia,32752878
+Russian Federation,RUS,Europe and Central Asia,34933929
+Philippines,PHL,East Asia and Pacific,38929878
+United States,USA,North America,53203189
+China,CHN,East Asia and Pacific,63595771
+India,IND,South Asia,97583864
