@@ -172,13 +172,16 @@
                         </div>
                         <!-- Card Body -->
                         <div class="card-body">
-                           <p class="details1"></p>
-                           <p> <span id="oldest_university" style="font-size: large; font-weight: bolder;"></span>
-                              is the oldest universty in <span style="font-size: large; font-weight: bolder;"
-                                 class="Country"></span> which was founded in <span
-                                 style="font-size: large; font-weight: bolder;" id="founded_year"></span>. It is a <span
-                                 style="font-size: large; font-weight: bolder;" id="university-type"></span> University
-                           </p>
+                           <h1 class="text-primary hover-on-map">Hover on map...</h1>
+                           <h3 class="details1"></h3>
+                         <h3 id="oldest_university" class="text-primary text-bold" style=" text-align:center; font-weight: bolder;"></h3>
+                             <h6 style="text-align: center;"> is the oldest universty in </h6>
+                             
+                             <h4 style="text-align: center;"
+                                 class="Country text-primary text-bold"></h4> which was founded in <span
+                                 style="font-size: large; font-weight: bold;" id="founded_year"></span>. It is a <span
+                                 style="font-size: large; font-weight: bold;" id="university-type"></span> University
+                     
                            <h3></h3>
                         </div>
                      </div>
@@ -209,6 +212,18 @@
 
 
                   <div class="col-lg-6 mb-4">
+                     <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                           <h6 class="m-0 font-weight-bold text-primary">Institutions offering Bachelor's , Masters and PhD.
+                           </h6>
+                        </div>
+                        <div class="card-body" id="waffle-chart-2"></div>
+                        <div class="card-body">
+                          In <strong><span class="Country"></span></strong>
+                         </div>
+                     </div>
+
+
                      <!-- Illustrations -->
                      <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -217,14 +232,13 @@
                         </div>
                         <select id="selectWaffle">
                            <option selected="selected" disabled=true>
-                              Choose a year
+                              (1950 default)
                            </option>
                         </select>
-
-                        <div class="card-body" id="waffle-chart">
-                        </div>
+                        <div class="card-body" id="waffle-chart"></div>
                      </div>
 
+                   
 
                      <!-- Approach -->
                      <div class="card shadow mb-4">

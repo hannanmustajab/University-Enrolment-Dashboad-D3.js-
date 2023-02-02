@@ -272,12 +272,7 @@ var chart3 = d3waffle()
   })
   .height(200);
 
-
-
-
-
 d3.csv("../csv/processed/income_group_by_year.csv", function (rows) {
-
 
   var parsetime = d3.timeParse("%Y-%m-%d");
   rows.forEach(function (d) {
@@ -314,7 +309,6 @@ d3.csv("../csv/processed/income_group_by_year.csv", function (rows) {
 
     const result = filteredLog.map(item => {
       return {
-        year: item.year,
         name: item.name,
         value: (item.count / totalCount) * 100
       };
@@ -326,7 +320,7 @@ d3.csv("../csv/processed/income_group_by_year.csv", function (rows) {
 
   }
 
-
+  filterData('1950');
 
 
   // When the button is changed, run the updateChart function
