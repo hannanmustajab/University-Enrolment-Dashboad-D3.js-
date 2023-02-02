@@ -28,7 +28,6 @@ svg_stack.append("text")
   .text("Number of Students")
 // Parse the Data
 d3.csv("../csv/processed/income_group_by_year.csv", function (data) {
-  // console.log(data);
 
   // List of subgroups = header of the csv files = soil condition here
   var subgroups = data.columns.slice(1)
@@ -37,9 +36,11 @@ d3.csv("../csv/processed/income_group_by_year.csv", function (data) {
   data.forEach(function (d) {
     d.year = parsetime(d.year);
   });
+
   data.forEach(function (d) {
     d.year = d.year.getFullYear();
   });
+
 
   // List of groups = species here = value of the first column called group -> I show them on the X axis
   var groups = d3.map(data, function (d) { return (d.year) }).keys()
