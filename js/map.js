@@ -1,3 +1,4 @@
+
 function d3waffle() {
     var margin = { top: 10, right: 10, bottom: 10, left: 10 },
       icon = "&#9632;",
@@ -44,7 +45,6 @@ function d3waffle() {
           detaildata[i].row = griddata[i][1];
         })
   
-        /*console.log("detail data length: ", detaildata.length)*/
   
         var gridSize = ((height - margin.top - margin.bottom) / rows)
   
@@ -256,9 +256,11 @@ function d3waffle() {
 
 // ==============================================================================
 // ====================================================================================
+
+
 var chart4 = d3waffle()
 .rows(3)
-.scale(1 / 6)
+.scale(1 / 5)
 .icon("&#xf19d;")
 .adjust(0.425)
 .colorscale(d3.scaleOrdinal(d3.schemeCategory10))
@@ -270,7 +272,6 @@ var chart4 = d3waffle()
 .height(200);
 
 function filterData(data,country){
-    console.log('filter data running.')
 
     // Get dataset
     var groupedData = d3.nest()
@@ -283,12 +284,10 @@ function filterData(data,country){
     const newArray = filteredLog.map(obj => {
         return [
           { name: "Bachelor's", value: +obj.percent_bachelor },
-          { name: "Master's", value: obj.percent_masters },
-          { name: "PhD", value: obj.percent_phd },
+          { name: "Master's", value: +obj.percent_masters },
+          { name: "PhD", value: +obj.percent_phd },
         ];
       });
-
-      console.log(newArray[0]);
 return newArray[0];    
 }
 
@@ -465,6 +464,12 @@ function drawMap(world, data) {
             d3.select("#waffle-chart-2")
             .datum(filterData(data,d.properties.name))
             .call(chart4);
+
+            // d3.select("#bachelors_count")
+            // .text(Math.round((filterData(data,d.properties.name)[0].value)%10))
+
+            // console.log(((filterData(data,d.properties.name))));
+
 
             d3.selectAll(".hover-on-map")
             .style("display","none")
