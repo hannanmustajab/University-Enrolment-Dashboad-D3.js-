@@ -272,64 +272,16 @@ var chart3 = d3waffle()
   })
   .height(200);
 
-d3.csv("../csv/processed/income_group_by_year.csv", function (rows) {
 
-  var parsetime = d3.timeParse("%Y-%m-%d");
-  rows.forEach(function (d) {
-    d.year = parsetime(d.year);
-    d.count = +d.count
-  });
-
-  rows.forEach(function (d) {
-    d.year = d.year.getFullYear();
-  });
-
-
-  var groupedData = d3.nest()
-    .key(function (d) { return d.year; })
-    .entries(rows);
-
-  const keys = groupedData.map(item => item.key);
-
-  // add the options to the button
-  d3.select("#selectWaffle")
-    .selectAll('myOptions')
-    .data(keys)
-    .enter()
-    .append('option')
-    .text(function (d) { return d; }) // text showed in the menu
-    .attr("value", function (d) { return d; }) // corresponding value returned by the button
-
-  function filterData(year) {
-    const filteredLog = groupedData.find(item => item.key === year).values;
-
-    const totalCount = filteredLog.reduce((sum, current) => sum + current.count, 0);
-
-    console.log(totalCount);
-
-    const result = filteredLog.map(item => {
-      return {
-        name: item.name,
-        value: (item.count / totalCount) * 100
-      };
-    });
-
-    d3.select("#waffle-chart")
-      .datum(result)
-      .call(chart3);
-
-  }
-
-  filterData('1950');
-
-
-  // When the button is changed, run the updateChart function
-  d3.select("#selectWaffle").on("change", function (d) {
-    // recover the option that has been chosen
-    var selectedOption = d3.select(this).property("value")
-    // run the updateChart function with this selected option
-    filterData(selectedOption)
-  })
-
+d3.csv("../csv/processed/income_group_count.csv", function (d) {
+  return {
+    name: d.incomegroup,
+    value: Math.round(+d.count_percentage),
+  };
+}, function (rows) {
+  console.log(rows);
+  d3.select("#waffle-chart")
+    .datum(rows)
+    .call(chart3);
 
 });
