@@ -30,7 +30,6 @@ svg_line.append("text")
 
 //Read the data
 d3.csv("csv/processed/students_by_country_year.csv", function (data) {
-  console.log(data);
 
   var parsetime = d3.timeParse("%Y-%m-%d");
   data.forEach(function (d) {
