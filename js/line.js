@@ -1,6 +1,6 @@
 
 // set the dimensions and margins of the graph
-var margin = { top: 10, right: 100, bottom: 30, left: 30 },
+var margin = { top: 10, right: 100, bottom: 80, left: 30 },
   width_line = 600 - margin.left - margin.right,
   height_line = 400 - margin.top - margin.bottom;
 
@@ -15,8 +15,8 @@ var svg_line = d3.select("#line-chart")
 
 svg_line.append("text")
   .attr("text-anchor", "end")
-  .attr("x", width - 350)
-  .attr("y", height + margin.top + 20)
+  .attr("x", width - 450)
+  .attr("y", height + margin.top + 50)
   .text("Year");
 
 // Y axis label:
