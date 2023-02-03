@@ -294,11 +294,11 @@ function filterData(data, country) {
 var width = 700,
   height = 400;
 
-var svg = d3.select("#map")
+var svg_map = d3.select("#map_world")
   .append("svg")
   .style("cursor", "move");
 
-svg.attr("viewBox", "50 10 " + width + " " + height)
+svg_map.attr("viewBox", "50 10 " + width + " " + height)
   .attr("preserveAspectRatio", "xMinYMin");
 
 var zoom = d3.zoom()
@@ -308,9 +308,9 @@ var zoom = d3.zoom()
   });
 
 var selectedCountry;
-svg.call(zoom);
+svg_map.call(zoom);
 
-var map = svg.append("g")
+var map = svg_map.append("g")
   .attr("class", "map");
 var tooltip = d3.select("div.tooltip");
 
@@ -459,17 +459,6 @@ function drawMap(world, data) {
 
       d3.selectAll("#showbox")
         .style("display", "block")
-
-      // d3.select("#bachelor-icon")
-      // .style("color",function(d){
-      //   if (d.details.offer_bach)return 'red'
-      // else return "blue" });  
-
-
-      // d3.select("#bachelors_count")
-      // .text(Math.round((filterData(data,d.properties.name)[0].value)%10))
-
-      // console.log(((filterData(data,d.properties.name))));
 
 
       d3.selectAll(".hover-on-map")
