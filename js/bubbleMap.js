@@ -50,14 +50,24 @@ function drawMap(world, data) {
 
     var features = topojson.feature(world, world.objects.countries).features;
 
-    console.log(features);
 
     data.forEach(function (d) {
             d.latitude = +d.latitude,
             d.longitude = +d.longitude,
-            d.Foundedin = +d.Foundedin
-
+            d.Foundedin = +d.Foundedin,
+            d.private01 = +d.private01
     });
+
+
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].private01) {
+            data[i].private = true;
+            data[i].public = false;
+        } else {
+            data[i].private = false;
+            data[i].public = true;
+        }
+    }
 
 
     // Draw map
@@ -74,8 +84,8 @@ function drawMap(world, data) {
         .attr("opacity", 0.5)
         .append("text")
         .attr("class", "country-label")
-        .attr("transform", function(d) { console.log("d", d); return "translate(" +path.centroid(d) + ")"; })
-        .text(function(d) {console.log(d.properties.name); return d.properties.name; })
+        .attr("transform", function(d) {return "translate(" +path.centroid(d) + ")"; })
+        .text(function(d) {return d.properties.name; })
         .attr("dx", function (d) {return "0.3em";
 
     })
@@ -98,7 +108,7 @@ function drawMap(world, data) {
         .range(d3.schemeCategory10);
 
         // Add one dot in the legend for each name.
-    var size = 5
+    var size = 10
     svg.selectAll("mydots")
     .data(['Upper middle income', 'High income','Lower middle income','Low income'])
     .enter()
@@ -111,7 +121,7 @@ function drawMap(world, data) {
 
     // Add one dot in the legend for each name.
     svg.selectAll("mylabels")
-    .data(['Upper middle income', 'High income','Lower middle income','Low income'])
+    .data(['Upper Middle income', 'High Income','Lower middle income','Low income'])
     .enter()
     .append("text")
         .attr("x", 55 + size*1.2)
@@ -165,14 +175,33 @@ function drawMap(world, data) {
             .style("fill", function(d){ return scaleMap(d.incomegroup) })
             .attr("stroke", function(d){ return scaleMap(d.incomegroup) })
             .attr("stroke-width", "0.1")
-            .attr("fill-opacity", "0.4")
+            .attr("fill-opacity", "0.3")
         .on("mouseover", mouseover)
         .on("mousemove", mousemove)
         .on("mouseleave", mouseleave)
-
-        // console.log(map.selectAll(".Upper middle e"));
-
-        // d3.selectAll(".Uppermiddleincome").transition().duration(1000).style("opacity", 1).attr("r", 10)
+        
+    
+    // // Add pvt / public 
+    // map
+    // .selectAll("myCircles")
+    // .data(data)
+    // .enter()
+    // .append("circle")
+    //     .attr("class" , function(d){ return d.public })
+    //     .attr("cx", function (eachCircle) {
+    //         return projection([eachCircle.longitude, eachCircle.latitude])[0];
+    //     })
+    //     .attr("cy", function (eachCircle) {
+    //         return projection([eachCircle.longitude, eachCircle.latitude])[1];
+    //     })
+    //     .attr("r", 2)
+    //     .style("fill", function(d){if (d.private) return "purple"; else if(d.public) return "yellow"; })
+    //     .attr("stroke", "white")
+    //     .attr("stroke-width", "0.1")
+    //     .attr("fill-opacity", "0.2")
+    //     .on("mouseover", mouseover)
+    //     .on("mousemove", mousemove)
+    //     .on("mouseleave", mouseleave)
 
             // This function is gonna change the opacity and size of selected and unselected circles
     function update(){
@@ -187,7 +216,7 @@ function drawMap(world, data) {
   
           // Otherwise I hide it
           }else{
-            map.selectAll("."+grp).transition().duration(200).style("opacity", 0).attr("r", 0)
+            map.selectAll("."+grp).style("opacity", 0).attr("r", 0)
           }
         })
       }

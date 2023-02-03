@@ -1,4 +1,4 @@
-function d3waffle_() {
+function d3waffle_(id) {
   var margin = { top: 10, right: 10, bottom: 10, left: 10 },
     icon = "&#9632;",
     scale = 1,
@@ -18,7 +18,7 @@ function d3waffle_() {
 
 
       /* setting parameters and data */
-      var idcontainer = "waffle-chart"; // I need to change thiz plz
+      var idcontainer = id; // I need to change thiz plz
       var total = d3.sum(data, function (d) { return d.value; });
 
       /* updating data */
@@ -259,10 +259,10 @@ function cartesianprod(paramArray) {
 
 // ==============================================================================
 // ====================================================================================
-var chart3 = d3waffle()
+var chart3 = d3waffle("waffle-chart-1")
   .rows(4)
   .scale(1 / 4)
-  .icon("&#xf015;")
+  // .icon("&#xf015;")
   .adjust(0.425)
   .colorscale(d3.scaleOrdinal(d3.schemeCategory10))
   .appearancetimes(function (d, i) {
@@ -279,9 +279,7 @@ d3.csv("../csv/processed/income_group_count.csv", function (d) {
     value: Math.round(+d.count_percentage),
   };
 }, function (rows) {
-  console.log(rows);
-  d3.select("#waffle-chart")
+  d3.select("#waffle-chart-1")
     .datum(rows)
     .call(chart3);
-
 });
