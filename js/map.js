@@ -347,8 +347,6 @@ function drawMap(world, data) {
 
 
     data.forEach(function (d) {
-
-
         // Calculate % of public universities.
         const public_percentage = ((+d.Public) / (+d.Private + +d.Public)) * 100;
         // Calculate % of private universities.
@@ -373,17 +371,19 @@ function drawMap(world, data) {
         d.details = populationById[d.id] ? populationById[d.id] : {};
     });
 
+    console.log(data);
 
+    // Add circles to map
 
     map.append("g")
         .selectAll("path")
         .data(features)
         .enter().append("path")
         .attr("name", function (d) {
-            return d.id;
+            return d.properties.name;
         })
         .attr("id", function (d) {
-            return d.id;
+            return d.properties.name;
         })
         .attr("d", path)
         .style("fill", function (d) {
@@ -393,7 +393,7 @@ function drawMap(world, data) {
         .attr("d", path)
         .on("mouseover", function (d, i) {
             d3.select(this).attr("fill", "grey").attr("stroke-width", 2);
-            return tooltip.style("hidden", false).html(d.name);
+            return tooltip.style("hidden", false).html(d.properties.name);
         })
         .on("mousemove", function (d) {
             tooltip.classed("hidden", false)
@@ -401,21 +401,11 @@ function drawMap(world, data) {
                 .style("top", (d3.mouse(this)[1]) + "px")
                 .html(d.properties.name);
         })
-        .on('mouseover', function (d) {
+        .on('click', function (d) {
             d3.select(this)
                 .style("stroke", "white")
                 .style("stroke-width", 1)
                 .style("cursor", "pointer");
-
-
-            var DetailText = d.details.university + " is the oldest university in " + d.properties.name +
-                ". It was founded in " + d.details.year + " and has " + d3.format(".2s")(d.details.count) +
-                " students enrolled.";
-
-            d3.select(".details")
-                .text(DetailText)
-                .style("font-size", "20px")
-                .style("fill", "red");
 
             d3.selectAll(".Country")
                 .text(d.properties.name);
@@ -484,4 +474,22 @@ function drawMap(world, data) {
             d3.select('.details')
                 .style('visibility', "hidden");
         });
+        // Scale for this
+        var nMinMax = d3.extent(data,function(d){return +d.founded_in })
+        ntoRadius = d3.scaleSqrt()
+          .domain(nMinMax)
+          .range([1,50])
+
+        console.log(nMinMax);
+        map.append("g")
+          .selectAll("circles")
+          .data(data)
+          .enter()
+          .append("circle")
+          .attr("cx",function(eachCircle){return projection([eachCircle.longitude, eachCircle.latitude])[0];
+          })
+          .attr("cy",function(eachCircle){return projection([eachCircle.longitude, eachCircle.latitude])[1];
+          })
+          // .attr("r",function(eachCircle){return ntoRadius(+eachCircle.founded_in)});
+
 }
