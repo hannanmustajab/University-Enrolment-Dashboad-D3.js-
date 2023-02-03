@@ -259,17 +259,17 @@ function cartesianprod(paramArray) {
 
 
 var chart4 = d3waffle()
-  .rows(4)
-  .scale(1 / 5)
+  .rows(5)
+  .scale(1/3)
   .icon("&#xf19d;")
-  .adjust(0.45)
+  .adjust(0.4)
   .colorscale(d3.scaleOrdinal(d3.schemeCategory10))
   .appearancetimes(function (d, i) {
     mod = 13;
     val = i % mod;
     return val / mod * 1500;
-  })
-  .height(200);
+  });
+  // .height(200);
 
 function filterData(data, country) {
 
