@@ -20,52 +20,12 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
 </head>
 
 <body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index2.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Interface
-            </div>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="#wafflehead">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span> Waffle Chart</span></a>
-                <a class="nav-link" href="#linehead">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span> Line Chart</span></a>
-                <a class="nav-link" href="#stackhead">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span> Stacked Bar Chart</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-        </ul>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -76,6 +36,28 @@
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Topbar Search -->
+                    <div class="navbar-nav ml-auto"></div>
+                    <div class="navbar-nav">
+                        <a href="#wafflehead" style="color: black;">Waffle Chart</a>
+                    </div>
+                    <div class="topbar-divider d-none d-sm-block"></div>
+                    <div class="navbar-nav">
+                        <a href="#linehead" style="color: black;">Line Chart</a>
+                    </div>
+                    <div class="topbar-divider d-none d-sm-block"></div>
+                    <div class="navbar-nav">
+                        <a href="#stackhead" style="color: black;">Stack bar Chart</a>
+                    </div>
+                    <div class="topbar-divider d-none d-sm-block"></div>
+
+
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                    </ul>
 
                 </nav>
                 <!-- End of Topbar -->
@@ -101,7 +83,7 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800 Country"></div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-graduation-cap fa-2x text-gray-300"></i>
+                                            <i class="fa-solid fa-globe"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -131,7 +113,8 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Private
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                Private/Public
                                                 Universities
                                             </div>
                                             <div class="row no-gutters align-items-center">
@@ -155,7 +138,6 @@
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fa fa-university fa-2x" aria-hidden="true"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -174,7 +156,8 @@
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                            <i class="fa-solid fa-building-columns"></i>
+
                                         </div>
                                     </div>
                                 </div>
@@ -216,15 +199,38 @@
 
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <p class="details1"></p>
-                                    <p> <span id="oldest_university"
-                                            style="font-size: large; font-weight: bolder;"></span>
-                                        is the oldest universty in <span style="font-size: large; font-weight: bolder;"
-                                            class="Country"></span> which was founded in <span
-                                            style="font-size: large; font-weight: bolder;" id="founded_year"></span>. It
-                                        is a <span style="font-size: large; font-weight: bolder;"
-                                            id="university-type"></span> University
-                                    </p>
+                                    <h1 class="text-primary hover-on-map" style="text-align: center;">Hover on map...
+                                    </h1>
+                                    <h3 class="details1"></h3>
+                                    <h3 id="oldest_university" class="text-primary text-bold"
+                                        style=" text-align:center; font-weight: bolder;"></h3>
+                                    <h6 style="text-align: center;"> is the oldest universty in </h6>
+
+                                    <h4 class="Country text-secondary text-bold" style="text-align: center;">which
+                                        was founded in <span style="font-size: large; font-weight: bold;"
+                                            id="founded_year"></span>. It is a <span
+                                            style="font-size: large; font-weight: bold;" id="university-type"></span>
+                                        University </h4>
+                                    <div style="text-align: center;">
+                                        <i style="color:blue;" class="fa-solid fa-graduation-cap"></i>
+                                        <i style="color:orange" class="fa-solid fa-graduation-cap"></i>
+                                        <i style="color:green" class="fa-solid fa-graduation-cap"></i>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Institutions offering Bachelor's ,
+                                        Masters and PhD</h6>
+                                </div>
+
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div id="waffle-chart-2"></div>
                                 </div>
                             </div>
                         </div>
@@ -261,7 +267,20 @@
                         </div>
 
                         <div class="col-lg-6 mb-4">
-
+                            <!-- <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Institutions offering Bachelor's ,
+                                        Masters and PhD.
+                                    </h6>
+                                </div>
+                                <div class="card-body" id="waffle-chart-2"></div>
+                                <hr />
+                                <div class="card-body">
+                                    In<strong><span class="Country"></span><span class="badge badge-primary"
+                                            id="bachelors_count"></span> out of 10 colleges offer Bachelor's
+                                        Degree</strong>
+                                </div>
+                            </div> -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3" id="wafflehead">
                                     <h6 class="m-0 font-weight-bold text-primary">Students belonging to different income
@@ -358,6 +377,7 @@
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/938ee0025d.js" crossorigin="anonymous"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
