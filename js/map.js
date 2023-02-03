@@ -267,8 +267,8 @@ var chart4 = d3waffle("waffle-chart-2")
     mod = 13;
     val = i % mod;
     return val / mod * 1500;
-  });
-// .height(200);
+  })
+  .height(200);
 
 function filterData(data, country) {
 
@@ -330,9 +330,9 @@ d3.queue()
 function drawMap(world, data) {
   // geoMercator projection
   var projection = d3.geoMercator() //d3.geoOrthographic()
-    .scale(130)
-    .scale(100)
-    .translate([width / 2, height / 1.5]);
+    .scale(150)
+    // .scale(100)
+    .translate([width / 2, height ]);
 
   // geoPath projection
   var path = d3.geoPath().projection(projection);

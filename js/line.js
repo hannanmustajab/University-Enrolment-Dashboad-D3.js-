@@ -127,7 +127,7 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
       var subgroupYear = d.time.getFullYear();
 
       tooltip_
-        .html('Total Students: ' + d3.format(".2s")(studentsEnrolled) + '<br>' + 'Year: ' + subgroupYear+'<br>'+'Percent Change: '+ '<i class="text-primary fa-solid fa-arrow-up"></i>'+d3.format("+20.2s")(+d.percent_change)+'%')
+        .html('Total Students: ' + d3.format(".2s")(studentsEnrolled) + '<br>' + 'Year: ' + subgroupYear+'<br>'+'Percent Change: '+'<i class="text-primary fa-solid fa-arrow-up"></i>'+d3.format("+20.2s")(+d.percent_change)+'%')
         .style("opacity", 1)
     }
     var mousemove = function (d) {
