@@ -12,8 +12,9 @@
     <title>University Enrollment Dataset</title>
 
     <!-- Custom fonts for this template-->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"
+        type="text/css">
+    <!-- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -83,7 +84,7 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800 Country"></div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fa-solid fa-globe"></i>
+                                            <i class=" fa-2x fa-solid fa-globe"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -156,7 +157,7 @@
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fa-solid fa-building-columns"></i>
+                                            <i class="fa-solid fa-2x fa-building-columns"></i>
 
                                         </div>
                                     </div>
@@ -182,23 +183,22 @@
                                     <div id="map">
                                         <div class="tooltip"></div>
                                     </div>
-
                                 </div>
 
                             </div>
                         </div>
 
                         <!-- Details Chart -->
-                        <div class="col-xl-4 col-lg-5">
+                        <div class="col-xl-4 col-lg-5 " id="showbox" style="display: none;">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Details</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Quick Insights</h6>
                                 </div>
 
                                 <!-- Card Body -->
-                                <div class="card-body">
+                                <div class="card-body" style="height: 200px;">
                                     <h1 class="text-primary hover-on-map" style="text-align: center;">Hover on map...
                                     </h1>
                                     <h3 class="details1"></h3>
@@ -212,15 +212,15 @@
                                             style="font-size: large; font-weight: bold;" id="university-type"></span>
                                         University </h4>
                                     <div style="text-align: center;">
-                                        <i style="color:blue;" class="fa-solid fa-graduation-cap"></i>
-                                        <i style="color:orange" class="fa-solid fa-graduation-cap"></i>
-                                        <i style="color:green" class="fa-solid fa-graduation-cap"></i>
+                                        <i class="fa-solid fa-graduation-cap fa-2x" id="bachelor-icon"></i>
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                        <i class="fa-solid fa-graduation-cap"></i>
                                     </div>
 
 
                                 </div>
                             </div>
-                            <div class="card shadow mb-4">
+                            <div class="card shadow mb-4" id="showbox" style="height: 270px; display:none;">
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -248,7 +248,7 @@
                                 <div class="card-header py-3" id="linehead">
                                     <h6 class="m-0 font-weight-bold text-primary">Projection of number of students
                                         enrolled from
-                                        1950 - 2020</h6>
+                                        1950 - 2020 </h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="mb-4">
@@ -259,36 +259,29 @@
                                         </select>
                                     </div>
                                     <div id="line-chart"></div>
-
                                 </div>
                             </div>
-                            <!-- <div id="stacked_bar2"></div> -->
-
                         </div>
 
                         <div class="col-lg-6 mb-4">
-                            <!-- <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Institutions offering Bachelor's ,
-                                        Masters and PhD.
-                                    </h6>
-                                </div>
-                                <div class="card-body" id="waffle-chart-2"></div>
-                                <hr />
-                                <div class="card-body">
-                                    In<strong><span class="Country"></span><span class="badge badge-primary"
-                                            id="bachelors_count"></span> out of 10 colleges offer Bachelor's
-                                        Degree</strong>
-                                </div>
-                            </div> -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3" id="wafflehead">
                                     <h6 class="m-0 font-weight-bold text-primary">Students belonging to different income
                                         groups world wide</h6>
                                 </div>
                                 <div class="card-body">
-                                    <!-- <div id="stacked_bar"></div> -->
-                                    <div id="waffle-chart"></div>
+                                    <div id="waffle-chart-1"></div>
+                                    <hr>
+                                    <p class="text-justify card-text text-justify">The analysis shows that 33% of university students
+                                        come from
+                                        High income families, <br>27% from lower middle income families, 37% from upper
+                                        middle income families, and the remaining from low income groups. <br> The exact
+                                        reasons for these enrollment percentages are unknown and could be due to various
+                                        factors such as accessibility of education, financial aid, cultural attitudes,
+                                        economic conditions, and university-specific factors. In this <a
+                                            href="#">plot</a> it can be clearly
+                                        seen the different countries where different income group students are enroled.
+                                    </p>
                                 </div>
                             </div>
 
@@ -317,10 +310,20 @@
                             <!-- Illustrations -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3" id="stackhead">
-                                    <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">YEARWISE TREND ON INCOME GROUPS</h6>
                                 </div>
                                 <div class="card-body">
                                     <div id="stacked_bar"></div>
+                                    <hr>
+                                    <p class="text-justify card-text">The stack bar chart indicates that from 1950 to
+                                        2020, the percentage of university students from the upper middle income group
+                                        has increased, while the percentage from the lower income group has remained
+                                        low. This trend could be due to a variety of factors such as improved
+                                        accessibility to education for upper middle income families, increased
+                                        availability of financial aid for students from these families, and shifting
+                                        cultural attitudes towards higher education. Additionally, economic and
+                                        educational policies at the national and regional levels could also play a role
+                                        in this trend.</p>
                                 </div>
                             </div>
 

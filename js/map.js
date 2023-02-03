@@ -1,6 +1,6 @@
 
-function d3waffle() {
-  var margin = { top: 10, right: 10, bottom: 10, left: 10 },
+function d3waffle(id) {
+  var margin = { top: 5, right: 5, bottom: 10, left: 10 },
     icon = "&#9632;",
     scale = 0.5,
     rows = 10,
@@ -17,9 +17,8 @@ function d3waffle() {
 
       selection.selectAll("*").remove();
 
-
       /* setting parameters and data */
-      var idcontainer = "waffle-chart"; // I need to change thiz plz
+      var idcontainer = id; // I need to change thiz plz
       var total = d3.sum(data, function (d) { return d.value; });
 
       /* updating data */
@@ -258,18 +257,18 @@ function cartesianprod(paramArray) {
 // ====================================================================================
 
 
-var chart4 = d3waffle()
-  .rows(4)
-  .scale(1 / 5)
+var chart4 = d3waffle("waffle-chart-2")
+  .rows(5)
+  .scale(1 / 3)
   .icon("&#xf19d;")
-  .adjust(0.45)
+  .adjust(0.4)
   .colorscale(d3.scaleOrdinal(d3.schemeCategory10))
   .appearancetimes(function (d, i) {
     mod = 13;
     val = i % mod;
     return val / mod * 1500;
-  })
-  .height(200);
+  });
+// .height(200);
 
 function filterData(data, country) {
 
@@ -347,8 +346,6 @@ function drawMap(world, data) {
 
 
   data.forEach(function (d) {
-
-
     // Calculate % of public universities.
     const public_percentage = ((+d.Public) / (+d.Private + +d.Public)) * 100;
     // Calculate % of private universities.
@@ -365,7 +362,8 @@ function drawMap(world, data) {
       public_p: public_percentage,
       uni_status: private01,
       founded_year: d.founded_in,
-      total_uni: d.total_universities
+      total_uni: d.total_universities,
+      offer_bach: +d.Bachelor
     }
   });
 
@@ -373,17 +371,19 @@ function drawMap(world, data) {
     d.details = populationById[d.id] ? populationById[d.id] : {};
   });
 
+  console.log(data);
 
+  // Add circles to map
 
   map.append("g")
     .selectAll("path")
     .data(features)
     .enter().append("path")
     .attr("name", function (d) {
-      return d.id;
+      return d.properties.name;
     })
     .attr("id", function (d) {
-      return d.id;
+      return d.properties.name;
     })
     .attr("d", path)
     .style("fill", function (d) {
@@ -393,29 +393,20 @@ function drawMap(world, data) {
     .attr("d", path)
     .on("mouseover", function (d, i) {
       d3.select(this).attr("fill", "grey").attr("stroke-width", 2);
-      return tooltip.style("hidden", false).html(d.name);
+      return tooltip.style("hidden", false).html(d.properties.name);
     })
     .on("mousemove", function (d) {
       tooltip.classed("hidden", false)
         .style("left", (d3.mouse(this)[0] - 90) + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
         .style("top", (d3.mouse(this)[1]) + "px")
+        .style("cursor", "pointer")
         .html(d.properties.name);
     })
-    .on('mouseover', function (d) {
+    .on('click', function (d) {
       d3.select(this)
         .style("stroke", "white")
         .style("stroke-width", 1)
         .style("cursor", "pointer");
-
-
-      var DetailText = d.details.university + " is the oldest university in " + d.properties.name +
-        ". It was founded in " + d.details.year + " and has " + d3.format(".2s")(d.details.count) +
-        " students enrolled.";
-
-      d3.select(".details")
-        .text(DetailText)
-        .style("font-size", "20px")
-        .style("fill", "red");
 
       d3.selectAll(".Country")
         .text(d.properties.name);
@@ -465,6 +456,16 @@ function drawMap(world, data) {
         .datum(filterData(data, d.properties.name))
         .call(chart4);
 
+
+      d3.selectAll("#showbox")
+        .style("display", "block")
+
+      // d3.select("#bachelor-icon")
+      // .style("color",function(d){
+      //   if (d.details.offer_bach)return 'red'
+      // else return "blue" });  
+
+
       // d3.select("#bachelors_count")
       // .text(Math.round((filterData(data,d.properties.name)[0].value)%10))
 
@@ -481,7 +482,7 @@ function drawMap(world, data) {
         .style("stroke", null)
         .style("stroke-width", 0.25);
 
-      d3.select('.details')
-        .style('visibility', "hidden");
+      // d3.select('.details')
+      //   .style('visibility', "hidden");
     });
 }
