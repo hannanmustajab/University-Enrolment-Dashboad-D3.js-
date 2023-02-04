@@ -125,10 +125,19 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
 
       var studentsEnrolled = +d.value;
       var subgroupYear = d.time.getFullYear();
-
-      tooltip_
+      var changePerc = +d.percent_change;
+      if (changePerc > 0){
+        tooltip_
         .html('Total Students: ' + d3.format(".2s")(studentsEnrolled) + '<br>' + 'Year: ' + subgroupYear+'<br>'+'Percent Change: '+'<i class="text-primary fa-solid fa-arrow-up"></i>'+d3.format("+20.2s")(+d.percent_change)+'%')
         .style("opacity", 1)
+      } else
+      {
+        tooltip_
+        .html('Total Students: ' + d3.format(".2s")(studentsEnrolled) + '<br>' + 'Year: ' + subgroupYear+'<br>'+'Percent Change: '+'<i class="text-danger fa-solid fa-arrow-down"></i>'+d3.format("+20.2s")(+d.percent_change)+'%')
+        .style("opacity", 1)
+      }
+
+      
     }
     var mousemove = function (d) {
       tooltip_

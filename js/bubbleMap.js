@@ -1,6 +1,6 @@
 
-var width = 700,
-    height = 300;
+var width = 600,
+    height = 200;
 
 var svg = d3.select("#map")
     .append("svg")
@@ -182,23 +182,23 @@ function drawMap(world, data) {
         
     
     // // Add pvt / public 
-    // map
-    // .selectAll("myCircles")
-    // .data(data)
-    // .enter()
-    // .append("circle")
-    //     .attr("class" , function(d){ return d.public })
-    //     .attr("cx", function (eachCircle) {
-    //         return projection([eachCircle.longitude, eachCircle.latitude])[0];
-    //     })
-    //     .attr("cy", function (eachCircle) {
-    //         return projection([eachCircle.longitude, eachCircle.latitude])[1];
-    //     })
-    //     .attr("r", 2)
-    //     .style("fill", function(d){if (d.private) return "purple"; else if(d.public) return "yellow"; })
-    //     .attr("stroke", "white")
-    //     .attr("stroke-width", "0.1")
-    //     .attr("fill-opacity", "0.2")
+    map
+    .selectAll("myCircles")
+    .data(data)
+    .enter()
+    .append("circle")
+        .attr("class" , function(d){ return d.public })
+        .attr("cx", function (eachCircle) {
+            return projection([eachCircle.longitude, eachCircle.latitude])[0];
+        })
+        .attr("cy", function (eachCircle) {
+            return projection([eachCircle.longitude, eachCircle.latitude])[1];
+        })
+        .attr("r", 2)
+        .style("fill", function(d){if (d.private) return "purple"; else if(d.public) return "yellow"; })
+        .attr("stroke", "white")
+        .attr("stroke-width", "0.1")
+        .attr("fill-opacity", "0.2")
     //     .on("mouseover", mouseover)
     //     .on("mousemove", mousemove)
     //     .on("mouseleave", mouseleave)
