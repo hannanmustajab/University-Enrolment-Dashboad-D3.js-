@@ -9,7 +9,7 @@ var svg = d3.select("#bubble_plot")
     .attr("height", height)
 
 // Read data
-d3.csv("../csv/processed/region_enrolment_processed.csv", function(data) {
+d3.csv("csv/processed/region_enrolment_processed.csv", function(data) {
 
   // Filter a bit the data -> more than 1 million inhabitants
   data = data.filter(function(d){ return d.students>100000 })

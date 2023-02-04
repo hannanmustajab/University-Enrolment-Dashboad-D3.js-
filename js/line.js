@@ -31,7 +31,7 @@ svg_line.append("text")
 
 
 //Read the data
-d3.csv("csv/processed/students_by_country_year.csv", function (data) {
+d3.csv("js/csv/processed/students_by_country_year.csv", function (data) {
 
   var parsetime = d3.timeParse("%Y-%m-%d");
   data.forEach(function (d) {
@@ -39,7 +39,7 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
   });
 
   //  Load Average line data
-  d3.csv("../csv/processed/yearwise_enrolment.csv", function (data2) {
+  d3.csv("js/csv/processed/yearwise_enrolment.csv", function (data2) {
 
     data2.forEach(function (d) {
       d.year = parsetime(d.year),

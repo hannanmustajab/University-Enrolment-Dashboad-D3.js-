@@ -274,7 +274,7 @@ var chart3 = d3waffle_("waffle-chart-1")
   .height(200);
 
 
-d3.csv("../csv/processed/income_group_count.csv", function (d) {
+d3.csv("js/csv/processed/income_group_count.csv", function (d) {
   return {
     name: d.incomegroup,
     value: Math.round(+d.count_percentage),

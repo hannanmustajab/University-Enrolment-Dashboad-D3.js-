@@ -27,7 +27,7 @@ var tooltip = d3.select("div.tooltip");
 d3.queue()
 d3.queue()
     .defer(d3.json, "js/50m.json")
-    .defer(d3.csv, "../csv/processed/university_merged.csv")
+    .defer(d3.csv, "js/csv/processed/university_merged.csv")
     .await(function (error, world, data) {
         if (error) {
             console.error('Oh dear, something went wrong: ' + error);
@@ -180,29 +180,6 @@ function drawMap(world, data) {
         .on("mouseover", mouseover)
         .on("mousemove", mousemove)
         .on("mouseleave", mouseleave)
-
-
-    // // Add pvt / public 
-    // map
-    // .selectAll("myCircles")
-    // .data(data)
-    // .enter()
-    // .append("circle")
-    //     .attr("class" , function(d){ return d.public })
-    //     .attr("cx", function (eachCircle) {
-    //         return projection([eachCircle.longitude, eachCircle.latitude])[0];
-    //     })
-    //     .attr("cy", function (eachCircle) {
-    //         return projection([eachCircle.longitude, eachCircle.latitude])[1];
-    //     })
-    //     .attr("r", 2)
-    //     .style("fill", function(d){if (d.private) return "purple"; else if(d.public) return "yellow"; })
-    //     .attr("stroke", "white")
-    //     .attr("stroke-width", "0.1")
-    //     .attr("fill-opacity", "0.2")
-    //     .on("mouseover", mouseover)
-    //     .on("mousemove", mousemove)
-    //     .on("mouseleave", mouseleave)
 
     // This function is gonna change the opacity and size of selected and unselected circles
     function update() {

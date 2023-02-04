@@ -27,7 +27,7 @@ svg_stack.append("text")
   .attr("x", -margin.top - 80)
   .text("Number of Students")
 // Parse the Data
-d3.csv("../csv/processed/income_group_by_year.csv", function (data) {
+d3.csv("js/csv/processed/income_group_by_year.csv", function (data) {
 
   // List of subgroups = header of the csv files = soil condition here
   var subgroups = data.columns.slice(1)

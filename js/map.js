@@ -246,7 +246,7 @@ var tooltip = d3.select("div.tooltip");
 d3.queue()
 d3.queue()
   .defer(d3.json, "js/50m.json")
-  .defer(d3.csv, "../csv/processed/merged_dataset.csv")
+  .defer(d3.csv, "js/csv/processed/merged_dataset.csv")
   .await(function (error, world, data) {
     if (error) {
       console.error('Oh dear, something went wrong: ' + error);

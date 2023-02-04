@@ -29,7 +29,7 @@ svg_stack2.append("text")
     .text("Number of Students")
 
 // Parse the Data
-d3.csv("../csv/processed/private_public_by_year_processed.csv", function (data) {
+d3.csv("js/csv/processed/private_public_by_year_processed.csv", function (data) {
 
     var parsetime = d3.timeParse("%Y-%m-%d");
     data.forEach(function (d) {
