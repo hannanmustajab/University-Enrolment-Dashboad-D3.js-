@@ -1,5 +1,5 @@
 function d3waffle_(id) {
-  var margin = { top: 10, right: 10, bottom: 10, left: 10 },
+  var margin_waffle = { top: 10, right: 10, bottom: 10, left: 10 },
     icon = "&#9632;",
     scale = 1,
     rows = 10,
@@ -19,6 +19,7 @@ function d3waffle_(id) {
 
       /* setting parameters and data */
       var idcontainer = id; // I need to change thiz plz
+      console.log(idcontainer)
       var total = d3.sum(data, function (d) { return d.value; });
 
       /* updating data */
@@ -46,14 +47,14 @@ function d3waffle_(id) {
 
       /*console.log("detail data length: ", detaildata.length)*/
 
-      var gridSize = ((height - margin.top - margin.bottom) / rows)
+      var gridSize = ((height - margin_waffle.top - margin_waffle.bottom) / rows)
 
       /* setting the container */
       var svg = selection.append("svg")
         .attr("width", "100%")
         .attr("height", height + "px")
         .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+        .attr("transform", "translate(" + margin_waffle.left + "," + margin_waffle.top + ")")
         .style("cursor", "default");
 
       var tooltip = d3.select("body")
@@ -259,10 +260,10 @@ function cartesianprod(paramArray) {
 
 // ==============================================================================
 // ====================================================================================
-var chart3 = d3waffle("waffle-chart-1")
+var chart3 = d3waffle_("waffle-chart-1")
   .rows(4)
   .scale(1 / 4)
-  // .icon("&#xf015;")
+  //.icon("&#xf015;")
   .adjust(0.425)
   .colorscale(d3.scaleOrdinal(d3.schemeCategory10))
   .appearancetimes(function (d, i) {
@@ -273,7 +274,7 @@ var chart3 = d3waffle("waffle-chart-1")
   .height(200);
 
 
-d3.csv("../csv/processed/income_group_count.csv", function (d) {
+d3.csv("js/csv/processed/income_group_count.csv", function (d) {
   return {
     name: d.incomegroup,
     value: Math.round(+d.count_percentage),

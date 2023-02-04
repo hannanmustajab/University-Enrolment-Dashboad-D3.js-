@@ -1,6 +1,6 @@
 // set the dimensions and margins of the graph
-var margin = { top: 10, right: 30, bottom: 20, left: 50 },
-  width_stackbar = 550 - margin.left - margin.right,
+var margin = { top: 10, right: 30, bottom: 90, left: 50 },
+  width_stackbar = 670 - margin.left - margin.right,
   height_stackbar = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -27,7 +27,7 @@ svg_stack.append("text")
   .attr("x", -margin.top - 80)
   .text("Number of Students")
 // Parse the Data
-d3.csv("../csv/processed/income_group_by_year.csv", function (data) {
+d3.csv("js/csv/processed/income_group_by_year.csv", function (data) {
 
   // List of subgroups = header of the csv files = soil condition here
   var subgroups = data.columns.slice(1)
@@ -113,8 +113,8 @@ d3.csv("../csv/processed/income_group_by_year.csv", function (data) {
     .data(subgroups)
     .enter()
     .append("rect")
-    .attr("x", 80)
-    .attr("y", function (d, i) { return 5 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
+    .attr("x", 10)
+    .attr("y", function (d, i) { console.log(i); return 330 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
     .attr("width", size)
     .attr("height", size)
     .style("fill", function (d) { return color(d) })
@@ -124,8 +124,8 @@ d3.csv("../csv/processed/income_group_by_year.csv", function (data) {
     .data(subgroups)
     .enter()
     .append("text")
-    .attr("x", 80 + size * 1.2)
-    .attr("y", function (d, i) { return 5 + i * (size + 5) + (size / 2) }) // 100 is where the first dot appears. 25 is the distance between dots
+    .attr("x", 10 + size * 1.2)
+    .attr("y", function (d, i) { return 330 + i * (size + 5) + (size / 2) }) // 100 is where the first dot appears. 25 is the distance between dots
     .style("fill", function (d) { return color(d) })
     .text(function (d) { return d })
     .attr("text-anchor", "left")

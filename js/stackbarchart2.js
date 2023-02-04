@@ -1,6 +1,6 @@
 // set the dimensions and margins of the graph
-var margin = { top: 10, right: 500, bottom: 90, left: 30 },
-    width = 1050 - margin.left - margin.right,
+var margin = { top: 10, right: 30, bottom: 90, left: 30 },
+    width = 670 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -29,7 +29,7 @@ svg_stack2.append("text")
     .text("Number of Students")
 
 // Parse the Data
-d3.csv("../csv/processed/private_public_by_year_processed.csv", function (data) {
+d3.csv("js/csv/processed/private_public_by_year_processed.csv", function (data) {
 
     var parsetime = d3.timeParse("%Y-%m-%d");
     data.forEach(function (d) {
@@ -48,9 +48,6 @@ d3.csv("../csv/processed/private_public_by_year_processed.csv", function (data) 
     const capitalized = subgroups.map(element => {
         return element.toUpperCase();
     });
-
-    console.log(capitalized);
-
 
     // Add X axis
     var x = d3.scaleBand()
@@ -119,8 +116,9 @@ d3.csv("../csv/processed/private_public_by_year_processed.csv", function (data) 
         .data(capitalized)
         .enter()
         .append("rect")
-        .attr("x", 80)
-        .attr("y", function (d, i) { return 5 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
+        // .attr("transform", function (d, i) { return "translate(" + i * (100 / color.domain().length) + ",350)"; })
+        .attr("x", 10)
+        .attr("y", function (d, i) { return 355 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
         .attr("width", size)
         .attr("height", size)
         .style("fill", function (d) { return color(d) })
@@ -130,8 +128,9 @@ d3.csv("../csv/processed/private_public_by_year_processed.csv", function (data) 
         .data(capitalized)
         .enter()
         .append("text")
-        .attr("x", 80 + size * 1.2)
-        .attr("y", function (d, i) { return 10 + i * (size + 5) + (size / 2) }) // 100 is where the first dot appears. 25 is the distance between dots
+        // .attr("transform", function (d, i) { return "translate(" + i * (450 / color.domain().length) + ",350)"; })
+        .attr("x", 10 + size * 1.2)
+        .attr("y", function (d, i) { return 355 + i * (size + 5) + (size / 2) }) // 100 is where the first dot appears. 25 is the distance between dots
         .style("fill", function (d) { return color(d) })
         .text(function (d) { return d })
         .attr("text-anchor", "left")
