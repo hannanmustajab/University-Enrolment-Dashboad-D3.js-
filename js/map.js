@@ -2,15 +2,19 @@
 function d3waffle(id) {
   var margin = { top: 5, right: 5, bottom: 10, left: 10 },
     icon = "&#9632;",
-    scale = 0.5,
-    rows = 10,
-    adjust = 0.8,
-    colorscale = d3.scaleOrdinal(d3.schemeCategory20),
-    appearancetimes = function (d, i) { return 500; },
+    scale = 1 / 4,
+    rows = 4,
+    adjust = 0.4,
+    colorscale = d3.scaleOrdinal(d3.schemeCategory10),
+    appearancetimes = function (d, i) {
+      mod = 13;
+      val = i % mod;
+      return val / mod * 1500;
+    },
     height = 200,
     magic_padding = 5;
 
-  function chart(selection) {
+  function chart_(selection) {
     // console.log(selection);
 
     selection.each(function (data) {
@@ -162,139 +166,64 @@ function d3waffle(id) {
     });
   }
 
-  chart.width = function (_) {
+  chart_.width = function (_) {
     if (!arguments.length) return width;
     width = _;
-    return chart;
+    return chart_;
   };
 
-  chart.height = function (_) {
+  chart_.height = function (_) {
     if (!arguments.length) return height;
     height = _;
-    return chart;
+    return chart_;
   };
 
-  chart.rows = function (_) {
+  chart_.rows = function (_) {
     if (!arguments.length) return rows;
     rows = _;
-    return chart;
+    return chart_;
   };
 
-  chart.icon = function (_) {
+  chart_.icon = function (_) {
     if (!arguments.length) return icon;
     icon = _;
-    return chart;
+    return chart_;
   };
 
-  chart.scale = function (_) {
+  chart_.scale = function (_) {
     if (!arguments.length) return scale;
     scale = _;
-    return chart;
+    return chart_;
   };
 
-  chart.colorscale = function (_) {
+  chart_.colorscale = function (_) {
     if (!arguments.length) return colorscale;
     colorscale = _;
-    return chart;
+    return chart_;
   };
 
-  chart.appearancetimes = function (_) {
+  chart_.appearancetimes = function (_) {
     if (!arguments.length) return appearancetimes;
     appearancetimes = _;
-    return chart;
+    return chart_;
   };
 
-  chart.adjust = function (_) {
+  chart_.adjust = function (_) {
     if (!arguments.length) return adjust;
     adjust = _;
-    return chart;
+    return chart_;
   };
 
-  return chart;
+  return chart_;
 
 }
 
-function slugify(text) {
-  return text.toString().toLowerCase()
-    .replace(/\s+/g, '-')           // Replace spaces with -
-    .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
-    .replace(/\-\-+/g, '-')         // Replace multiple - with single -
-    .trim();                        // Trim - from end of text
-}
-
-/* http://stackoverflow.com/questions/12303989/cartesian-product-of-multiple-arrays-in-javascript */
-function cartesianprod(paramArray) {
-
-  function addTo(curr, args) {
-
-    var i, copy,
-      rest = args.slice(1),
-      last = !rest.length,
-      result = [];
-
-    for (i = 0; i < args[0].length; i++) {
-
-      copy = curr.slice();
-      copy.push(args[0][i]);
-
-      if (last) {
-        result.push(copy);
-
-      } else {
-        result = result.concat(addTo(copy, rest));
-      }
-    }
-
-    return result;
-  }
-
-
-  return addTo([], Array.prototype.slice.call(arguments));
-}
-
-
-// ==============================================================================
-// ====================================================================================
-
-
-var chart4 = d3waffle("waffle-chart-2")
-  .rows(5)
-  .scale(1 / 3)
-  .icon("&#xf19d;")
-  .adjust(0.4)
-  .colorscale(d3.scaleOrdinal(d3.schemeCategory10))
-  .appearancetimes(function (d, i) {
-    mod = 13;
-    val = i % mod;
-    return val / mod * 1500;
-  })
-  .height(200);
-
-function filterData(data, country) {
-
-  // Get dataset
-  var groupedData = d3.nest()
-    .key(function (d) { return d.Country; })
-    .entries(data);
-
-  // filter it.
-  const filteredLog = groupedData.find(item => item.key === country).values;
-
-  const newArray = filteredLog.map(obj => {
-    return [
-      { name: "Bachelor's", value: +obj.percent_bachelor },
-      { name: "Master's", value: +obj.percent_masters },
-      { name: "PhD", value: +obj.percent_phd },
-    ];
-  });
-  return newArray[0];
-}
 
 
 var width = 700,
   height = 400;
 
-var svg_map = d3.select("#map_world")
+var svg_map = d3.select("#map")
   .append("svg")
   .style("cursor", "move");
 
@@ -332,7 +261,7 @@ function drawMap(world, data) {
   var projection = d3.geoMercator() //d3.geoOrthographic()
     .scale(150)
     // .scale(100)
-    .translate([width / 2, height ]);
+    .translate([width / 2, height]);
 
   // geoPath projection
   var path = d3.geoPath().projection(projection);
@@ -371,7 +300,8 @@ function drawMap(world, data) {
     d.details = populationById[d.id] ? populationById[d.id] : {};
   });
 
-  console.log(data);
+
+
 
   // Add circles to map
 
@@ -401,6 +331,8 @@ function drawMap(world, data) {
         .style("top", (d3.mouse(this)[1]) + "px")
         .style("cursor", "pointer")
         .html(d.properties.name);
+
+
     })
     .on('click', function (d) {
       d3.select(this)
@@ -460,6 +392,8 @@ function drawMap(world, data) {
       d3.selectAll("#showbox")
         .style("display", "block")
 
+      d3.select("#hidebox")
+        .style("display", "none")
 
       d3.selectAll(".hover-on-map")
         .style("display", "none")
@@ -474,4 +408,39 @@ function drawMap(world, data) {
       // d3.select('.details')
       //   .style('visibility', "hidden");
     });
+
+
+
+  var chart4 = d3waffle("waffle-chart-2")
+    .rows(5)
+    .scale(1 / 5)
+    //.icon("&#xf19d;")
+    .adjust(0.4)
+    .colorscale(d3.scaleOrdinal(d3.schemeCategory10))
+    .appearancetimes(function (d, i) {
+      mod = 13;
+      val = i % mod;
+      return val / mod * 1500;
+    })
+    .height(200);
+
+  function filterData(data, country) {
+
+    // Get dataset
+    var groupedData = d3.nest()
+      .key(function (d) { return d.Country; })
+      .entries(data);
+
+    // filter it.
+    const filteredLog = groupedData.find(item => item.key === country).values;
+
+    const newArray = filteredLog.map(obj => {
+      return [
+        { name: "Bachelor's", value: +obj.percent_bachelor },
+        { name: "Master's", value: +obj.percent_masters },
+        { name: "PhD", value: +obj.percent_phd },
+      ];
+    });
+    return newArray[0];
+  }
 }

@@ -1,7 +1,7 @@
 
 // set the dimensions and margins of the graph
-var margin = { top: 10, right: 100, bottom: 80, left: 30 },
-  width_line = 750 - margin.left - margin.right,
+var margin = { top: 10, right: 30, bottom: 90, left: 30 },
+  width_line = 550 - margin.left - margin.right,
   height_line = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -13,11 +13,12 @@ var svg_line = d3.select("#line-chart")
   .attr("transform",
     "translate(" + margin.left + "," + margin.top + ")");
 
-    // X axis label
+// X axis label
 svg_line.append("text")
   .attr("text-anchor", "end")
-  .attr("x", width - 500)
-  .attr("y", height + margin.top + 50)
+  .attr("class", "label")
+  .attr("x", width_line - 220)
+  .attr("y", height_line + margin.top + 30)
   .text("Year");
 
 // Y axis label:
@@ -81,19 +82,6 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
       .attr("class", "yaxis")
       .call(d3.axisRight(y));
 
-    // // create avg line
-    // var avg_line =svg_line
-    // .allGroup('g')
-    // .append("path")
-    // .datum(data2)
-    // .attr("d", d3.line()
-    //   .x(function (d) { return x(d.year) })
-    //   .y(function (d) { return y(+d.avg) })
-    // )
-    // .attr("stroke", "black")
-    // .style("stroke-width", 4)
-    // .style("fill", "none")
-
     // Initialize line with group a
     var line = svg_line
       .append('g')
@@ -127,13 +115,13 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
       var subgroupYear = d.time.getFullYear();
 
       tooltip_
-        .html('Total Students: ' + d3.format(".2s")(studentsEnrolled) + '<br>' + 'Year: ' + subgroupYear+'<br>'+'Percent Change: '+'<i class="text-primary fa-solid fa-arrow-up"></i>'+d3.format("+20.2s")(+d.percent_change)+'%')
+        .html('Total Students: ' + d3.format(".2s")(studentsEnrolled) + '<br>' + 'Year: ' + subgroupYear + '<br>' + 'Percent Change: ' + '<i class="text-primary fa-solid fa-arrow-up"></i>' + d3.format("+20.2s")(+d.percent_change) + '%')
         .style("opacity", 1)
     }
     var mousemove = function (d) {
       tooltip_
-        .style("left", (d3.mouse(this)[0] + 10) + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
-        .style("top", (d3.mouse(this)[1] + 10) + "px")
+        .style("left", (d3.mouse(this)[0]) + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
+        .style("top", (d3.mouse(this)[1]) + "px")
     }
     var mouseleave = function (d) {
       tooltip_
@@ -173,10 +161,10 @@ d3.csv("csv/processed/students_by_country_year.csv", function (data) {
         if (previousValue === 0) {
           dataFilter[i].percent_change = 0;
         } else {
-        dataFilter[i].percent_change = (currentValue - previousValue) / previousValue * 100;
+          dataFilter[i].percent_change = (currentValue - previousValue) / previousValue * 100;
+        }
       }
-    }
-      console.log(dataFilter);
+
 
       var max = d3.max(data, function (d) { return +d[selectedGroup] })
       var min = d3.min(data, function (d) { return +d[selectedGroup] })

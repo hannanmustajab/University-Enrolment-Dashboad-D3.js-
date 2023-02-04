@@ -1,6 +1,6 @@
 // set the dimensions and margins of the graph
-var margin = { top: 10, right: 500, bottom: 90, left: 30 },
-    width = 1050 - margin.left - margin.right,
+var margin = { top: 10, right: 30, bottom: 90, left: 30 },
+    width = 670 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -48,9 +48,6 @@ d3.csv("../csv/processed/private_public_by_year_processed.csv", function (data) 
     const capitalized = subgroups.map(element => {
         return element.toUpperCase();
     });
-
-    console.log(capitalized);
-
 
     // Add X axis
     var x = d3.scaleBand()

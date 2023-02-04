@@ -167,9 +167,7 @@
                     </div>
 
                     <!-- Content Row -->
-
                     <div class="row">
-
                         <!-- Area Chart -->
                         <div class="col-xl-8 col-lg-7">
                             <div class="card shadow mb-4">
@@ -180,7 +178,7 @@
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <div id="map_world">
+                                    <div id="map">
                                         <div class="tooltip"></div>
                                     </div>
                                 </div>
@@ -189,7 +187,7 @@
                         </div>
 
                         <!-- Details Chart -->
-                        <div class="col-xl-4 col-lg-5 " id="showbox" style="display: none;">
+                        <div class="col-xl-4 col-lg-5 " style="display: block;">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
@@ -198,21 +196,27 @@
                                 </div>
 
                                 <!-- Card Body -->
-                                <div class="card-body">
-                                    <h3 class=" text-secondary hover-on-map" style="text-align: center;">Hover on
+                                <div class="card-body" style="display:block">
+                                    <h3 class=" text-secondary" id="hidebox" style="text-align: center;">
+                                        Click on a
+                                        country from
                                         map...
                                     </h3>
-                                    <h3 id="oldest_university" class="text-primary text-bold"
-                                        style=" text-align:center; font-weight: bolder;"></h3>
-                                    <h6 style="text-align: center;"> is the oldest universty in </h6>
+                                    <div id="showbox" style="display: none;">
+                                        <h3 id="oldest_university" class="text-primary text-bold"
+                                            style=" text-align:center; font-weight: bolder;"></h3>
+                                        <h6 style="text-align: center;"> is the oldest universty in </h6>
 
-                                    <h4 class="Country text-secondary text-bold" style="text-align: center;"></h4>
-                                    <h6 style="text-align: center;"> was founded in
-                                        <span style="font-size: large; font-weight: bold;" id="founded_year"></span>
-                                        . It is a
-                                        <span style="font-size: large; font-weight: bold;" id="university-type"></span>
-                                        University
-                                    </h6>
+                                        <h4 class="Country text-secondary text-bold" style="text-align: center;"></h4>
+                                        <h6 style="text-align: center;"> was founded in
+                                            <span style="font-size: large; font-weight: bold;" id="founded_year"></span>
+                                            . It is a
+                                            <span style="font-size: large; font-weight: bold;"
+                                                id="university-type"></span>
+                                            University
+                                        </h6>
+                                    </div>
+
                                     <!-- <div style="text-align: center;">
                                         <i class="fa-solid fa-graduation-cap" id="bachelor-icon"></i>
                                         <i class="fa-solid fa-graduation-cap"></i>
@@ -298,8 +302,8 @@
                             <!-- Project Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Number of Students enrolled in public
-                                        or private universities from 1950 - 2020
+                                    <h6 class="m-0 font-weight-bold text-primary">Number of Students Enrolled In Public
+                                        or Private Universities From 1950 - 2020
                                     </h6>
                                 </div>
                                 <div class="card-body">
@@ -313,20 +317,26 @@
                             <!-- Illustrations -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3" id="stackhead">
-                                    <h6 class="m-0 font-weight-bold text-primary">YEARWISE TREND ON INCOME GROUPS</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Year-wise Trend On Income Groups</h6>
                                 </div>
                                 <div class="card-body">
                                     <div id="stacked_bar"></div>
-                                    <hr>
-                                    <p class="text-justify card-text">The stack bar chart indicates that from 1950 to
-                                        2020, the percentage of university students from the upper middle income group
-                                        has increased, while the percentage from the lower income group has remained
-                                        low. This trend could be due to a variety of factors such as improved
-                                        accessibility to education for upper middle income families, increased
-                                        availability of financial aid for students from these families, and shifting
-                                        cultural attitudes towards higher education. Additionally, economic and
-                                        educational policies at the national and regional levels could also play a role
-                                        in this trend.</p>
+                                    <div>
+                                        <hr>
+                                        <p class="text-justify card-text">The stack bar chart indicates that from 1950
+                                            to
+                                            2020, the percentage of university students from the upper middle income
+                                            group
+                                            has increased, while the percentage from the lower income group has remained
+                                            low. This trend could be due to a variety of factors such as improved
+                                            accessibility to education for upper middle income families, increased
+                                            availability of financial aid for students from these families, and shifting
+                                            cultural attitudes towards higher education. Additionally, economic and
+                                            educational policies at the national and regional levels could also play a
+                                            role
+                                            in this trend.</p>
+                                    </div>
+
                                 </div>
                             </div>
 
@@ -393,12 +403,6 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
     <script src="js/map.js"></script>
     <script src="js/line.js"></script>
     <script src="js/stackbarchart2.js"></script>
