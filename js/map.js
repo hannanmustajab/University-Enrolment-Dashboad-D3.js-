@@ -391,6 +391,15 @@ function drawMap(world, data) {
         .datum(filterData(data, d.properties.name))
         .call(chart4);
 
+      d3.select("#bach_no")
+        .text(Math.round(filterData(data,d.properties.name)[0].value/10));
+
+      d3.select("#mast_no")
+        .text(Math.round(filterData(data,d.properties.name)[1].value/10));
+
+      d3.select("#phd_no")
+       .text(Math.round(filterData(data,d.properties.name)[2].value/10));
+      console.log(filterData(data, d.properties.name));
 
       d3.selectAll("#showbox")
         .style("display", "block")

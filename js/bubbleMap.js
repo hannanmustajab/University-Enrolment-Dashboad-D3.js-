@@ -109,8 +109,8 @@ function drawMap(world, data) {
         .range(d3.schemeCategory10);
 
     // Add one dot in the legend for each name.
-    var size = 5
-    svg.selectAll("mydots")
+    var size = 1000
+    map.selectAll("mydots")
         .data(['Upper middle income', 'High income', 'Lower middle income', 'Low income'])
         .enter()
         .append("rect")
@@ -121,7 +121,7 @@ function drawMap(world, data) {
         .style("fill", function (d) { return scaleMap(d) })
 
     // Add one dot in the legend for each name.
-    svg.selectAll("mylabels")
+    map.selectAll("mylabels")
         .data(['Upper Middle income', 'High Income', 'Lower middle income', 'Low income'])
         .enter()
         .append("text")
@@ -151,7 +151,7 @@ function drawMap(world, data) {
     }
     var mousemove = function (d) {
         Tooltip
-            .html(d.University + "<br>" + "Group: " + d.incomegroup + "<br>" + "Country: " + d.properties)
+            .html(d.University + "<br>" + "Group: " + d.incomegroup)
             .style("left", (d3.mouse(this)[0] + 10) + "px")
             .style("top", (d3.mouse(this)[1]) + "px")
     }
@@ -182,24 +182,24 @@ function drawMap(world, data) {
         .on("mouseleave", mouseleave)
         
     
-    // // Add pvt / public 
-    map
-    .selectAll("myCircles")
-    .data(data)
-    .enter()
-    .append("circle")
-        .attr("class" , function(d){ return d.public })
-        .attr("cx", function (eachCircle) {
-            return projection([eachCircle.longitude, eachCircle.latitude])[0];
-        })
-        .attr("cy", function (eachCircle) {
-            return projection([eachCircle.longitude, eachCircle.latitude])[1];
-        })
-        .attr("r", 2)
-        .style("fill", function(d){if (d.private) return "purple"; else if(d.public) return "yellow"; })
-        .attr("stroke", "white")
-        .attr("stroke-width", "0.1")
-        .attr("fill-opacity", "0.2")
+    // // // Add pvt / public 
+    // map
+    // .selectAll("myCircles")
+    // .data(data)
+    // .enter()
+    // .append("circle")
+    //     .attr("class" , function(d){ return d.public })
+    //     .attr("cx", function (eachCircle) {
+    //         return projection([eachCircle.longitude, eachCircle.latitude])[0];
+    //     })
+    //     .attr("cy", function (eachCircle) {
+    //         return projection([eachCircle.longitude, eachCircle.latitude])[1];
+    //     })
+    //     .attr("r", 2)
+    //     .style("fill", function(d){if (d.private) return "purple"; else if(d.public) return "yellow"; })
+    //     .attr("stroke", "white")
+    //     .attr("stroke-width", "0.1")
+        // .attr("fill-opacity", "0.2")
     //     .on("mouseover", mouseover)
     //     .on("mousemove", mousemove)
     //     .on("mouseleave", mouseleave)

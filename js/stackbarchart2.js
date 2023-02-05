@@ -30,14 +30,20 @@ svg_stack2.append("text")
 
 // Parse the Data
 d3.csv("js/csv/processed/private_public_by_year_processed.csv", function (data) {
-
+   
     var parsetime = d3.timeParse("%Y-%m-%d");
     data.forEach(function (d) {
+        const sum = +d.private + parseFloat(d.public);
         d.year = parsetime(d.year);
+        d.private_perc = +(parseFloat(d.private) / sum) * 100;
+        d.public_perc = +(parseFloat(d.public) / sum) * 100;
+        
     });
     data.forEach(function (d) {
         d.year = d.year.getFullYear();
     });
+
+    console.log(data);
 
     // List of subgroups = header of the csv files = soil condition here
     var subgroups = data.columns.slice(1)
@@ -93,8 +99,10 @@ d3.csv("js/csv/processed/private_public_by_year_processed.csv", function (data) 
     var mouseover = function (d) {
         var subgroupName = d3.select(this.parentNode).datum().key;
         var subgroupValue = d.data[subgroupName];
+        var PercentageToShow = d.data[subgroupName+'_perc'];
+        
         tooltip
-            .html(subgroupName + "<br>" + d3.format(".2s")(subgroupValue))
+            .html(subgroupName + "<br>" + d3.format(".2s")(subgroupValue)+ "<br>" + "Percentage: " + d3.format("20.2s")(PercentageToShow)+'%')
             .style("opacity", 1)
     }
     var mousemove = function (d) {
@@ -122,6 +130,7 @@ d3.csv("js/csv/processed/private_public_by_year_processed.csv", function (data) 
         .attr("width", size)
         .attr("height", size)
         .style("fill", function (d) { return color(d) })
+        
 
     // Add one dot in the legend for each name.
     svg_stack2.selectAll("mylabels")
