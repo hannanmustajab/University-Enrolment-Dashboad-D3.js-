@@ -211,12 +211,12 @@
                                         <h6 style="text-align: center;"> is the oldest universty in </h6>
 
                                         <h4 class="Country text-secondary text-bold" style="text-align: center;"></h4>
-                                        <h6 style="text-align: center;"> was founded in
+                                        <h6 style="text-align: center;"> Founded in
                                             <span style="font-size: large; font-weight: bold;" id="founded_year"></span>
-                                            . It is a
-                                            <span style="font-size: large; font-weight: bold;"
-                                                id="university-type"></span>
-                                            University
+                                            <!-- <br> -->
+                                            <!-- <span style="font-size: large; font-weight: bold;"
+                                                id="university-type"></span> University -->
+                                           
                                         </h6>
                                     </div>
 
@@ -229,7 +229,7 @@
 
                                 </div>
                             </div>
-                            <div class="card shadow mb-4" id="showbox" style="height: 270px; display:none;">
+                            <div class="card shadow mb-4" id="showbox" style="height: 380px; display:none;">
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -240,6 +240,13 @@
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div id="waffle-chart-2"></div>
+                                    <div>
+                                        <hr>
+                                        <p class="text-justify card-text" style="color: rgb(49, 45, 45);">
+                                            <center>Out of every 10 Universities in <span class="Country"></span></center>
+                                            <br> <span id="bach_no"></span> offer bachelors degree, <span id="mast_no"></span> offer masters and <span id="phd_no"></span> offers PhD.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -262,13 +269,21 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="mb-4">
-                                        <select class="form-select  form-select-lg mb-3"  id="selectButton">
+                                        <select class="form-select form-select-lg mb-3"  id="selectButton">
                                             <option selected="selected" disabled=true>
                                                 select a country
                                             </option>
                                         </select>
                                     </div>
                                     <div id="line-chart"></div>
+                                    <div>
+                                        <hr>
+                                        <p class="text-justify card-text" style="color: rgb(49, 45, 45);">
+                                            This line chart visualisation, helps us see the growth in enrolments for every country. By selecting a country from the 
+                                            Dropdown menu, users can hover on the points which also shows them the year on year growth. 
+                                        </p>
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -321,13 +336,22 @@
                             <!-- Project Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 " style="font-weight: bolder; color: black;">Number of Students
-                                        Enrolled In Public
+                                    <h6 class="m-0 " style="font-weight: bolder; color: black;">Students Attending Public
                                         or Private Universities From 1950 - 2020
                                     </h6>
                                 </div>
                                 <div class="card-body">
                                     <div id="stacked_bar2"></div>
+                                    <div>
+                                        <hr>
+                                        <p class="text-justify card-text" style="color: rgb(49, 45, 45);">
+                                            In our dataset, university were classified as public or private. So we counted the total number of students
+                                            that attended private and public school every year. On hovering on each of the bar, we can also see the percentage
+                                            of each group for every year. It looks that the percentage of students attending public schools increased from <b>36%
+                                            to 44% from 1950 to 2020. </b> The main reason for this trend is the fact that public colleges are government-funded, making 
+                                            easily accesible by students of every income group; while private schools rely more on tuition and endowments. 
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
 
