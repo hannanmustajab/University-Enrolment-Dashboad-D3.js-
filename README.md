@@ -1,4 +1,4 @@
-# **University Enrolment Dataset  PROJECT** - _Assignments Data Visualization_
+# **University Enrolment Dataset  
 
 ## **Group Members:** 
 - #### Abdul Hannan Mustajab (S5156186)
