@@ -4,9 +4,9 @@ var width = 600,
 
 var newmapsvg = d3.select("#newmap")
     .append("svg")
-    // x.style("cursor", "move");
+// x.style("cursor", "move");
 
-    newmapsvg.attr("viewBox", "50 10 " + width + " " + height)
+newmapsvg.attr("viewBox", "50 10 " + width + " " + height)
     .attr("preserveAspectRatio", "xMinYMin");
 
 var zoom = d3.zoom()
@@ -15,7 +15,7 @@ var zoom = d3.zoom()
         map.attr("transform", transform);
     });
 
-    newmapsvg.call(zoom);
+newmapsvg.call(zoom);
 
 var newmap = newmapsvg.append("g")
     .attr("class", "newmap");
@@ -109,13 +109,13 @@ function drawNewMap(world, data) {
         .range(d3.schemeCategory10);
 
     // Add one dot in the legend for each name.
-    var size = 1000
+    var size = 4
     newmap.selectAll("mydots")
         .data(['Upper middle income', 'High income', 'Lower middle income', 'Low income'])
         .enter()
         .append("rect")
-        .attr("x", 55)
-        .attr("y", function (d, i) { return 250 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
+        .attr("x", 60)
+        .attr("y", function (d, i) { return 160 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
         .attr("width", size)
         .attr("height", size)
         .style("fill", function (d) { return scaleMap(d) })
@@ -125,9 +125,9 @@ function drawNewMap(world, data) {
         .data(['Upper Middle income', 'High Income', 'Lower middle income', 'Low income'])
         .enter()
         .append("text")
-        .attr("x", 55 + size)
-        .attr("y", function (d, i) { return 250 + i * (size + 5) + (size / 2) }) // 100 is where the first dot appears. 25 is the distance between dots
-        .style("fill", function (d) { return scaleMap(d) })
+        .attr("x", 65 + size)
+        .attr("y", function (d, i) { return 160 + i * (size + 5) + (size / 2) }) // 100 is where the first dot appears. 25 is the distance between dots
+        // .style("fill", function (d) { return scaleMap(d) })
         .text(function (d) { return d })
         .attr("text-anchor", "left")
         .style("alignment-baseline", "middle")
@@ -180,8 +180,8 @@ function drawNewMap(world, data) {
         .on("mouseover", mouseover)
         .on("mousemove", mousemove)
         .on("mouseleave", mouseleave)
-        
-    
+
+
     // // // Add pvt / public 
     // map
     // .selectAll("myCircles")
@@ -199,7 +199,7 @@ function drawNewMap(world, data) {
     //     .style("fill", function(d){if (d.private) return "purple"; else if(d.public) return "yellow"; })
     //     .attr("stroke", "white")
     //     .attr("stroke-width", "0.1")
-        // .attr("fill-opacity", "0.2")
+    // .attr("fill-opacity", "0.2")
     //     .on("mouseover", mouseover)
     //     .on("mousemove", mousemove)
     //     .on("mouseleave", mouseleave)
