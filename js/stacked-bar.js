@@ -65,7 +65,7 @@ d3.csv("js/csv/processed/income_group_by_year.csv", function (data) {
   var color = d3.scaleOrdinal()
     .domain(subgroups)
     .range(["rgb(158,202,225)", "rgb(66,146,198)", "rgb(33,113,181)", "rgb(8,48,107)"])
-    // .range(d3.schemeBlues[9])
+  // .range(d3.schemeBlues[9])
 
   //stack the data? --> stack per subgroup
   var stackedData = d3.stack()
@@ -114,7 +114,7 @@ d3.csv("js/csv/processed/income_group_by_year.csv", function (data) {
     .enter()
     .append("rect")
     .attr("x", 10)
-    .attr("y", function (d, i) { console.log(i); return 330 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
+    .attr("y", function (d, i) { return 330 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
     .attr("width", size)
     .attr("height", size)
     .style("fill", function (d) { return color(d) })
