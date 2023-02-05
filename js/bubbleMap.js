@@ -2,11 +2,11 @@
 var width = 600,
     height = 200;
 
-var svg = d3.select("#newmap")
+var newmapsvg = d3.select("#newmap")
     .append("svg")
     .style("cursor", "move");
 
-svg.attr("viewBox", "50 10 " + width + " " + height)
+    newmapsvg.attr("viewBox", "50 10 " + width + " " + height)
     .attr("preserveAspectRatio", "xMinYMin");
 
 var zoom = d3.zoom()
@@ -15,9 +15,9 @@ var zoom = d3.zoom()
         map.attr("transform", transform);
     });
 
-svg.call(zoom);
+    newmapsvg.call(zoom);
 
-var map = svg.append("g")
+var newmap = newmapsvg.append("g")
     .attr("class", "newmap");
 
 
@@ -32,12 +32,12 @@ d3.queue()
         if (error) {
             console.error('Oh dear, something went wrong: ' + error);
         } else {
-            drawMap(world, data);
+            drawNewMap(world, data);
         }
     });
 
 
-function drawMap(world, data) {
+function drawNewMap(world, data) {
 
     // geoMercator projection
     var projection = d3.geoMercator() //d3.geoOrthographic()
@@ -72,7 +72,7 @@ function drawMap(world, data) {
 
     // Draw map
 
-    map.append("g")
+    newmap.append("g")
         .selectAll("path")
         .data(features)
         .enter()
@@ -110,7 +110,7 @@ function drawMap(world, data) {
 
     // Add one dot in the legend for each name.
     var size = 1000
-    map.selectAll("mydots")
+    newmap.selectAll("mydots")
         .data(['Upper middle income', 'High income', 'Lower middle income', 'Low income'])
         .enter()
         .append("rect")
@@ -121,7 +121,7 @@ function drawMap(world, data) {
         .style("fill", function (d) { return scaleMap(d) })
 
     // Add one dot in the legend for each name.
-    map.selectAll("mylabels")
+    newmap.selectAll("mylabels")
         .data(['Upper Middle income', 'High Income', 'Lower middle income', 'Low income'])
         .enter()
         .append("text")
@@ -160,7 +160,7 @@ function drawMap(world, data) {
     }
 
     // console.log(nMinMax);
-    map
+    newmap
         .selectAll("myCircles")
         .data(data)
         .enter()
@@ -172,7 +172,7 @@ function drawMap(world, data) {
         .attr("cy", function (eachCircle) {
             return projection([eachCircle.longitude, eachCircle.latitude])[1];
         })
-        .attr("r", 0.2)
+        .attr("r", 0.5)
         .style("fill", function (d) { return scaleMap(d.incomegroup) })
         .attr("stroke", function (d) { return scaleMap(d.incomegroup) })
         .attr("stroke-width", "0.1")
@@ -213,11 +213,11 @@ function drawMap(world, data) {
 
             // If the box is check, I show the group
             if (cb.property("checked")) {
-                map.selectAll("." + grp).style("opacity", 1).attr("r", 1)
+                newmap.selectAll("." + grp).style("opacity", 1).attr("r", 1)
 
                 // Otherwise I hide it
             } else {
-                map.selectAll("." + grp).style("opacity", 0).attr("r", 0)
+                newmap.selectAll("." + grp).style("opacity", 0).attr("r", 0)
             }
         })
     }
