@@ -240,12 +240,12 @@
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div id="waffle-chart-2"></div>
-                                    <div>
+                                    <div class="center">
                                         <hr>
-                                        <p class="text-justify card-text" style="color: rgb(49, 45, 45);">
-                                            <center>Out of every 10 Universities in <span class="Country"></span></center>
+                        
+                                            <span style="text-align: center;" class="text-primary"> Out of every 10 Universities in <span class="Country"></span></span>
                                             <br> <span id="bach_no"></span> offer bachelors degree, <span id="mast_no"></span> offer masters and <span id="phd_no"></span> offers PhD.
-                                        </p>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -389,6 +389,36 @@
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-lg-10 mb-4">
+
+                            <!-- Project Card Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 " style="font-weight: bolder; color: black;">Universities from various income groups.
+                                    </h6>
+                                </div>
+                                <div class="card-body">
+                                    <div id="newmap"></div>
+                                    <div class="select">
+                                      
+                                        <input type="checkbox" class="checkbox" value="Uppermiddleincome"
+                                            checked><label>Upper middle income</label>
+                                        <input type="checkbox" class="checkbox" value="Highincome"
+                                            checked><label>High income</label>
+                                        <input type="checkbox" class="checkbox" value="Lowermiddleincome"
+                                            checked><label>Lower middle income</label>
+                                        <input type="checkbox" class="checkbox" value="Lowincome" checked><label>Low
+                                            income</label>
+                                    
+                                </div>
+                                </div>
+                            </div>
+
+                        </div>
+                       
+                    </div>
+
                 </div>
                 <!-- /.container-fluid -->
 
@@ -454,6 +484,7 @@
     <script src="js/stackbarchart2.js"></script>
     <script src="js/stacked-bar.js"></script>
     <script src="js/waffle.js"></script>
+    <script src="js/bubbleMap.js"></script>
 
 </body>
 
