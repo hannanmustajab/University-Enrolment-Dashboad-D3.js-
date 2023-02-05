@@ -1,4 +1,9 @@
-# data-visualisation-final-project
-Project by:
- - Abdul Hannan Mustajab
- - Mirza Saad Baig
+# **University Enrolment Dataset  PROJECT** - _Assignments Data Visualization_
+
+## **Group Members:** 
+- #### Abdul Hannan Mustajab (S5156186)
+- #### Mirza Saad Baig (S5152083)
+
+## Instructions
+You can browse the website, created using GitHub Pages as server, clicking on the following link: http://hannanmustajab.github.io/data-visualisation-final-project/
+
