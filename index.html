@@ -10,7 +10,11 @@
     <meta name="author" content="">
 
     <title>University Enrollment Dataset</title>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <!-- Custom fonts for this template-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"
         type="text/css">
@@ -216,7 +220,7 @@
                                             <!-- <br> -->
                                             <!-- <span style="font-size: large; font-weight: bold;"
                                                 id="university-type"></span> University -->
-                                           
+
                                         </h6>
                                     </div>
 
@@ -242,10 +246,12 @@
                                     <div id="waffle-chart-2"></div>
                                     <div class="center">
                                         <hr>
-                        
-                                            <span style="text-align: center;" class="text-primary"> Out of every 10 Universities in <span class="Country"></span></span>
-                                            <br> <span id="bach_no"></span> offer bachelors degree, <span id="mast_no"></span> offer masters and <span id="phd_no"></span> offers PhD.
-                                        
+
+                                        <span style="text-align: center;" class="text-primary"> Out of every 10
+                                            Universities in <span class="Country"></span></span>
+                                        <br> <span id="bach_no"></span> offer bachelors degree, <span
+                                            id="mast_no"></span> offer masters and <span id="phd_no"></span> offers PhD.
+
                                     </div>
                                 </div>
                             </div>
@@ -269,7 +275,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="mb-4">
-                                        <select class="form-select form-select-lg mb-3"  id="selectButton">
+                                        <select class="form-select form-select-lg mb-3" id="selectButton">
                                             <option selected="selected" disabled=true>
                                                 select a country
                                             </option>
@@ -279,10 +285,12 @@
                                     <div>
                                         <hr>
                                         <p class="text-justify card-text" style="color: rgb(49, 45, 45);">
-                                            This line chart visualisation, helps us see the growth in enrolments for every country. By selecting a country from the 
-                                            Dropdown menu, users can hover on the points which also shows them the year on year growth. 
+                                            This line chart visualisation, helps us see the growth in enrolments for
+                                            every country. By selecting a country from the
+                                            Dropdown menu, users can hover on the points which also shows them the year
+                                            on year growth.
                                         </p>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -319,9 +327,8 @@
                                         <br> The exact
                                         reasons for these enrollment percentages are unknown and could be due to various
                                         factors such as accessibility of education, financial aid, cultural attitudes,
-                                        economic conditions, and university-specific factors. In this <a
-                                            href="new_worldmap.html">plot</a> it can be clearly
-                                        seen the different countries where different income group students are enroled.
+                                        economic conditions, and university-specific factors. In the plot below, we can
+                                        visualise which country has universities belonging to which income group.
                                     </p>
                                 </div>
                             </div>
@@ -336,7 +343,8 @@
                             <!-- Project Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 " style="font-weight: bolder; color: black;">Students Attending Public
+                                    <h6 class="m-0 " style="font-weight: bolder; color: black;">Students Attending
+                                        Public
                                         or Private Universities From 1950 - 2020
                                     </h6>
                                 </div>
@@ -345,11 +353,16 @@
                                     <div>
                                         <hr>
                                         <p class="text-justify card-text" style="color: rgb(49, 45, 45);">
-                                            In our dataset, university were classified as public or private. So we counted the total number of students
-                                            that attended private and public school every year. On hovering on each of the bar, we can also see the percentage
-                                            of each group for every year. It looks that the percentage of students attending public schools increased from <b>36%
-                                            to 44% from 1950 to 2020. </b> The main reason for this trend is the fact that public colleges are government-funded, making 
-                                            easily accesible by students of every income group; while private schools rely more on tuition and endowments. 
+                                            In our dataset, university were classified as public or private. So we
+                                            counted the total number of students
+                                            that attended private and public school every year. On hovering on each of
+                                            the bar, we can also see the percentage
+                                            of each group for every year. It looks that the percentage of students
+                                            attending public schools increased from <b>36%
+                                                to 44% from 1950 to 2020. </b> The main reason for this trend is the
+                                            fact that public colleges are government-funded, making
+                                            easily accesible by students of every income group; while private schools
+                                            rely more on tuition and endowments.
                                         </p>
                                     </div>
                                 </div>
@@ -390,37 +403,77 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-lg-10 mb-4">
-
+                        <div class="col-lg-9 mb-4">
                             <!-- Project Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 " style="font-weight: bolder; color: black;">Universities from various income groups.
+                                    <h6 class="m-0 " style="font-weight: bolder; color: black;">Universities from
+                                        various income groups.
                                     </h6>
                                 </div>
                                 <div class="card-body">
                                     <div id="newmap"></div>
-                                    <div class="select">
-                                      
-                                        <input type="checkbox" class="checkbox" value="Uppermiddleincome"
-                                            checked><label>Upper middle income</label>
-                                        <input type="checkbox" class="checkbox" value="Highincome"
-                                            checked><label>High income</label>
-                                        <input type="checkbox" class="checkbox" value="Lowermiddleincome"
-                                            checked><label>Lower middle income</label>
-                                        <input type="checkbox" class="checkbox" value="Lowincome" checked><label>Low
-                                            income</label>
-                                    
-                                </div>
+                                    <div>
+                                        <hr>
+                                        <p class="text-justify card-text" style="color: rgb(49, 45, 45);">This
+                                            visualisation shows every university in the dataset, and the place
+                                            where it is located along with its income group. We can see that most of the
+                                            high income universities are situated in USA, UK and Europe. It is
+                                            because they are developed nations.
+                                            <br>
+                                            Universities serving low income group students are very less in number and
+                                            are mostly in Africa or Afghanistan. They are developing nations or
+                                            under-developed!
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
-                       
+                        <div class="col-lg-3">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 " style="font-weight: bolder; color: black;">Select Income Group
+                                    </h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="justify-content-between py-3">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input checkbox" type="checkbox" value="Highincome"
+                                                id="flexSwitchCheckDefault">
+                                            <label class="form-check-label" for="flexSwitchCheckDefault">High
+                                                Income</label>
+                                        </div>
+
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input checkbox" type="checkbox"
+                                                value="Uppermiddleincome" id="flexSwitchCheckDefault">
+                                            <label class="form-check-label" for="flexSwitchCheckDefault">Upper Middle
+                                                Income</label>
+                                        </div>
+
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input checkbox" type="checkbox"
+                                                value="Lowermiddleincome" id="flexSwitchCheckDefault">
+                                            <label class="form-check-label" for="flexSwitchCheckDefault">Lower Middle
+                                                Income</label>
+                                        </div>
+
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input checkbox" value="Lowincome" type="checkbox"
+                                                id="flexSwitchCheckDefault">
+                                            <label class="form-check-label" for="flexSwitchCheckDefault">Low
+                                                Income</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
                 <!-- /.container-fluid -->
+
+                
 
             </div>
             <!-- End of Main Content -->
@@ -440,31 +493,6 @@
 
     </div>
     <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>

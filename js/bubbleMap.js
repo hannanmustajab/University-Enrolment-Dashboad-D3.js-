@@ -4,7 +4,7 @@ var width = 600,
 
 var newmapsvg = d3.select("#newmap")
     .append("svg")
-    .style("cursor", "move");
+    // x.style("cursor", "move");
 
     newmapsvg.attr("viewBox", "50 10 " + width + " " + height)
     .attr("preserveAspectRatio", "xMinYMin");
@@ -213,7 +213,7 @@ function drawNewMap(world, data) {
 
             // If the box is check, I show the group
             if (cb.property("checked")) {
-                newmap.selectAll("." + grp).style("opacity", 1).attr("r", 1)
+                newmap.selectAll("." + grp).transition().duration(1000).style("opacity", 1).attr("r", 1)
 
                 // Otherwise I hide it
             } else {
