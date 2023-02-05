@@ -230,6 +230,9 @@ var svg_map = d3.select("#map")
 svg_map.attr("viewBox", "50 10 " + width + " " + height)
   .attr("preserveAspectRatio", "xMinYMin");
 
+
+
+
 var zoom = d3.zoom()
   .on("zoom", function () {
     var transform = d3.zoomTransform(this);
