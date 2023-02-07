@@ -187,18 +187,31 @@
                                     <div id="map">
                                         <div class="tooltip"></div>
                                     </div>
+                                    <hr>
+                                    <span style="color: rgb(49, 45, 45);">The color range on the world map, from light
+                                        blue to dark blue, represents the
+                                        relative number of students enrolled in each country. The color range provides a
+                                        visual representation of the distribution of students across the globe, with
+                                        dark blue indicating a higher number of students enrolled and light blue
+                                        indicating a lower number. By using color to represent the number of students
+                                        enrolled, this world map offers a simple and effective way of visualizing
+                                        complex data in an intuitive and engaging manner. It provides a valuable tool
+                                        for understanding the distribution of students across the globe and for
+                                        identifying areas where resources and attention may need to be focused to
+                                        promote equal educational opportunities for all.</span>
                                 </div>
 
                             </div>
                         </div>
 
                         <!-- Details Chart -->
-                        <div class="col-xl-4 col-lg-5 " style="display: block;">
+                        <div class=" col-xl-4 col-lg-5 " style=" display: block;">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0" style="font-weight: bolder; color: black;">Quick Insights</h6>
+                                    <h6 class="m-0" style="font-weight: bolder; color: black;">Quick
+                                        Insights</h6>
                                 </div>
 
                                 <!-- Card Body -->
@@ -237,7 +250,9 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Institutions offering Bachelor's ,
+                                    <h6 class="m-0 font-weight-bold" style="color: black;">Institutions
+                                        Offering
+                                        Bachelor's ,
                                         Masters and PhD</h6>
                                 </div>
 
@@ -247,10 +262,18 @@
                                     <div class="center">
                                         <hr>
 
-                                        <span style="text-align: center;" class="text-primary"> Out of every 10
-                                            Universities in <span class="Country"></span></span>
-                                        <br> <span id="bach_no"></span> offer bachelors degree, <span
-                                            id="mast_no"></span> offer masters and <span id="phd_no"></span> offers PhD.
+                                        <span style="display: block;
+                                             text-align: center;
+                                             color: rgb(49, 45, 45);
+                                             font-weight: bold; font-style: italic;">
+                                            <span>Out of every 10
+                                                Universities</span> in <span style="font-style: italic;"
+                                                class="Country"></span>
+
+                                            <br> <span id="bach_no"></span> offer bachelors
+                                            degree, <span id="mast_no"></span> offer masters and <span
+                                                id="phd_no"></span> offers
+                                            PhD.</span>
 
                                     </div>
                                 </div>
@@ -268,16 +291,17 @@
                             <!-- Project Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3" id="linehead">
-                                    <h6 class="m-0 " style="font-weight: bolder; color: black;">Projection of number of
-                                        students
-                                        enrolled from
+                                    <h6 class="m-0 " style="font-weight: bolder; color: black;">Projection of
+                                        Number of
+                                        Students
+                                        Enrolled From
                                         1950 - 2020 </h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="mb-4">
-                                        <select class="form-select form-select-lg mb-3" id="selectButton">
+                                        <select class="form-select form-select-sm mb-3" id="selectButton">
                                             <option selected="selected" disabled=true>
-                                                select a country
+                                                Select a Country
                                             </option>
                                         </select>
                                     </div>
@@ -285,9 +309,11 @@
                                     <div>
                                         <hr>
                                         <p class="text-justify card-text" style="color: rgb(49, 45, 45);">
-                                            This line chart visualisation, helps us see the growth in enrolments for
+                                            This line chart visualisation, helps us see the growth in enrolments
+                                            for
                                             every country. By selecting a country from the
-                                            Dropdown menu, users can hover on the points which also shows them the year
+                                            Dropdown menu, users can hover on the points which also shows them
+                                            the year
                                             on year growth.
                                         </p>
 
@@ -300,8 +326,8 @@
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3" id="wafflehead">
                                     <h6 class="m-0" style="font-weight: bolder; color: black;">Students
-                                        belonging to different income
-                                        groups world wide</h6>
+                                        Belonging To Different Income
+                                        Groups World Wide</h6>
                                 </div>
                                 <div class="card-body">
                                     <div id="waffle-chart-1"></div>
@@ -309,7 +335,8 @@
                                     <p class="text-justify card-text text-justify" style="color: rgb(49, 45, 45);">The
                                         analysis
                                         shows that <span
-                                            style="font-weight: bold; color: black; font-style: italic;">33%</span> of
+                                            style="font-weight: bold; color: black; font-style: italic;">33%</span>
+                                        of
                                         university students
                                         come from
                                         <span style="color:blue; font-weight: bold; font-style: italic;">High
@@ -317,7 +344,8 @@
                                         families, <br>
                                         <span style="font-weight: bold; color: black; font-style: italic;">27%</span>
                                         from
-                                        <span style="color:green; font-weight: bold; font-style: italic;">lower middle
+                                        <span style="color:green; font-weight: bold; font-style: italic;">lower
+                                            middle
                                             income</span> families,
                                         <span style="font-weight: bold; color: black; font-style: italic;">37%</span>
                                         from <span style="color:red; font-weight: bold; font-style: italic;">upper
@@ -325,10 +353,14 @@
                                             style="color:orange;     font-weight: bold; font-style: italic;">low
                                             income</span> groups.
                                         <br> The exact
-                                        reasons for these enrollment percentages are unknown and could be due to various
-                                        factors such as accessibility of education, financial aid, cultural attitudes,
-                                        economic conditions, and university-specific factors. In the plot below, we can
-                                        visualise which country has universities belonging to which income group.
+                                        reasons for these enrollment percentages are unknown and could be due to
+                                        various
+                                        factors such as accessibility of education, financial aid, cultural
+                                        attitudes,
+                                        economic conditions, and university-specific factors. In the plot below,
+                                        we can
+                                        visualise which country has universities belonging to which income
+                                        group.
                                     </p>
                                 </div>
                             </div>
@@ -343,7 +375,8 @@
                             <!-- Project Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 " style="font-weight: bolder; color: black;">Students Attending
+                                    <h6 class="m-0 " style="font-weight: bolder; color: black;">Students
+                                        Attending
                                         Public
                                         or Private Universities From 1950 - 2020
                                     </h6>
@@ -354,15 +387,20 @@
                                     <div>
                                         <hr>
                                         <p class="text-justify card-text" style="color: rgb(49, 45, 45);">
-                                            In our dataset, university were classified as public or private. So we
+                                            In our dataset, university were classified as public or private. So
+                                            we
                                             counted the total number of students
-                                            that attended private and public school every year. On hovering on each of
+                                            that attended private and public school every year. On hovering on
+                                            each of
                                             the bar, we can also see the percentage
-                                            of each group for every year. It looks that the percentage of students
+                                            of each group for every year. It looks that the percentage of
+                                            students
                                             attending public schools increased from <b>36%
-                                                to 44% from 1950 to 2020. </b> The main reason for this trend is the
+                                                to 44% from 1950 to 2020. </b> The main reason for this trend is
+                                            the
                                             fact that public colleges are government-funded, making
-                                            easily accesible by students of every income group; while private schools
+                                            easily accesible by students of every income group; while private
+                                            schools
                                             rely more on tuition and endowments.
                                         </p>
                                     </div>
@@ -375,24 +413,39 @@
                             <!-- Illustrations -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3" id="stackhead">
-                                    <h6 class="m-0" style="font-weight: bolder; color: black;">Year-wise Trend On Income
+                                    <h6 class="m-0" style="font-weight: bolder; color: black;">Year-wise Trend
+                                        On Income
                                         Groups</h6>
                                 </div>
                                 <div class="card-body">
                                     <div id="stacked_bar"></div>
                                     <div>
                                         <hr>
-                                        <p class="text-justify card-text" style="color: rgb(49, 45, 45);">The stack bar
-                                            chart indicates that from 1950
-                                            to
-                                            2020, the percentage of university students from the upper middle income
+                                        <p class="text-justify card-text" style="color: rgb(49, 45, 45);">The
+                                            goal of
+                                            this chart is to visualize the trends in the distribution of
+                                            students across
+                                            different income groups over time, on a global scale. This data over
+                                            a
+                                            70-year period (1950 - 2020) highlights changes
+                                            in the
+                                            distribution of students across different income groups.
+                                            It indicates that from 1950 to
+                                            2020, the percentage of university students from the upper middle
+                                            income
                                             group
-                                            has increased, while the percentage from the lower income group has remained
-                                            low. This trend could be due to a variety of factors such as improved
-                                            accessibility to education for upper middle income families, increased
-                                            availability of financial aid for students from these families, and shifting
-                                            cultural attitudes towards higher education. Additionally, economic and
-                                            educational policies at the national and regional levels could also play a
+                                            has increased, while the percentage from the lower income group has
+                                            remained
+                                            low. This trend could be due to a variety of factors such as
+                                            improved
+                                            accessibility to education for upper middle income families,
+                                            increased
+                                            availability of financial aid for students from these families, and
+                                            shifting
+                                            cultural attitudes towards higher education. Additionally, economic
+                                            and
+                                            educational policies at the national and regional levels could also
+                                            play a
                                             role
                                             in this trend.</p>
                                     </div>
@@ -408,8 +461,9 @@
                             <!-- Project Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 " style="font-weight: bolder; color: black;">Universities from
-                                        various income groups.
+                                    <h6 class="m-0 " style="font-weight: bolder; color: black;">Universities
+                                        From
+                                        Various Income Groups.
                                     </h6>
                                 </div>
                                 <div class="card-body">
@@ -417,14 +471,24 @@
                                     <div>
                                         <hr>
                                         <p class="text-justify card-text" style="color: rgb(49, 45, 45);">This
-                                            visualisation shows every university in the dataset, and the place
-                                            where it is located along with its income group. We can see that most of the
-                                            high income universities are situated in USA, UK and Europe. It is
-                                            because they are developed nations.
+                                            Visualizing this data on a world map provides a clear picture of the
+                                            distribution of students from different income backgrounds across
+                                            the globe.
+                                            This information can be useful for educational institutions,
+                                            policymakers,
+                                            and researchers to understand patterns of enrollment, access to
+                                            education,
+                                            and equity in educational opportunities across different countries
+                                            and
+                                            income groups.
                                             <br>
-                                            Universities serving low income group students are very less in number and
+                                            Universities serving low income group students are very less in
+                                            number and
                                             are mostly in Africa or Afghanistan. They are developing nations or
-                                            under-developed!
+                                            under-developed. Whereas students with high income group are seen
+                                            mostly in
+                                            developed
+                                            nations where access to education is easier like USA, Canda, Europe.
                                         </p>
                                     </div>
                                 </div>
@@ -432,12 +496,18 @@
                         </div>
                         <div class="col-lg-3">
                             <div class="card shadow mb-4">
-                                <div class="card-header py-3">
+                                <!-- <div class="card-header py-3">
                                     <h6 class="m-0 " style="font-weight: bolder; color: black;">Select Income Group
                                     </h6>
-                                </div>
+                                </div> -->
                                 <div class="card-body">
+                                    <div style="text-align: center; color: rgb(49, 45, 45);">
+                                        <span>Select income groups to see their respective data on the world
+                                            map.</span><br>
+                                    </div>
                                     <div style="text-align: center;">
+                                        <br>
+
                                         <input class="form-check-input checkbox" type="checkbox" value="Highincome"
                                             id="flexSwitchCheckDefault"> <label class="form-check-label text-gray-800"
                                             for="flexSwitchCheckDefault">High
@@ -463,6 +533,8 @@
                                             class="form-check-label text-gray-800" for="flexSwitchCheckDefault">Low
                                             Income <i class=" fa-dollar-sign"></i></label>
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>
@@ -474,7 +546,8 @@
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Data Visualisation Final Project 2023 (Abdul Hannan Mustajab &
+                            <span>Copyright &copy; Data Visualisation Final Project 2023 (Abdul Hannan Mustajab
+                                &
                                 Mirza
                                 Saad
                                 Baig)</span>
