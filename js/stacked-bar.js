@@ -64,7 +64,7 @@ d3.csv("js/csv/processed/income_group_by_year.csv", function (data) {
   // color palette = one color per subgroup
   var color = d3.scaleOrdinal()
     .domain(subgroups)
-    .range((d3.schemeCategory10))
+    .range(["rgb(158,202,225)", "rgb(66,146,198)", "rgb(33,113,181)", "rgb(8,48,107)"])
   // .range(d3.schemeBlues[9])
 
   //stack the data? --> stack per subgroup
